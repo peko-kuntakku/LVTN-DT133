@@ -1,4 +1,4 @@
-﻿body
+body
 {
     font-family: 'Segoe UI', sans-serif
 }
@@ -7,25 +7,33 @@ span {
     font-style: italic
 }
 
+.img1 {
+    position: absolute;
+    width: 800px;
+    height: 960px;
+    left: 0px;
+    top: 0px;
+}
 .left-column {
-    width: 70%;
+    width: 60%;
     height: 150px;
     background: #FFFFFF;
     float:left;
 }
 .right-column {
-    width: 30%;
+    width: 40%;
     height: 150px;
     background: #FFFFFF;
     float:right;
 }
 
 .title1 {
-    width: 182px;
-    height: 55px;
-    left: 241px;
-    top: 220px;
-    font-family: 'Inter';
+    text-align: center;
+    width: 340px;
+    height:55px;
+    left: 250px;
+    top: 250px;
+    font-family: Arial;
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
@@ -35,11 +43,10 @@ span {
 }
 
 .text1 {
-    width: 76px;
     height: 22px;
-    left: 158px;
-    top: 326px;
-    font-family: 'Inter';
+    left: 200px;
+    top: 350px;
+    font-family: Arial;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -51,8 +58,34 @@ span {
 .submitbut {
     width: 348px;
     height: 42px;
-    left: 158px;
-    top: 575px;
+    left: 200px;
+    top: 600px;
     background: #2E90FA;
     border-radius: 5px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 153.52%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+.googlebut {
+    box-sizing: border-box;
+    width: 348px;
+    height: 42px;
+    left: 200px;
+    top: 719px;
+    background: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    border-radius: 5px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 153.52%;
+    letter-spacing: -0.02em;
+    color: #2E90FA;
 }
