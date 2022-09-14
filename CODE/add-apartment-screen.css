@@ -1,0 +1,2944 @@
+.add-apartment-screen-container {
+  min-height: 100vh;
+}
+.add-apartment-screen-add-apartment-screen {
+  width: 100%;
+  height: 1388px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 1512px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+  background-color: var(--dl-color-default-bgcolor);
+}
+.add-apartment-screen-main {
+  top: 111px;
+  left: 310px;
+  width: 1163px;
+  height: 1178px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+}
+.add-apartment-screen-text {
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-list {
+  top: 35px;
+  left: 0px;
+  width: 1163px;
+  height: 1143px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-row {
+  top: 168px;
+  left: 31px;
+  width: 238px;
+  height: 74px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-floors {
+  top: 0px;
+  left: 0px;
+  width: 238px;
+  height: 74px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-small-dropdown {
+  top: 32px;
+  left: 0px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text002 {
+  top: 11px;
+  left: 17.41463279724121px;
+  color: var(--dl-color-default-extratext);
+  width: 204px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-ickeyboardarrowdown48px {
+  top: 11px;
+  left: 208px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-text007 {
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-row01 {
+  top: 286px;
+  left: 31px;
+  width: 238px;
+  height: 74px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-floors1 {
+  top: 0px;
+  left: 0px;
+  width: 238px;
+  height: 74px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-small-dropdown01 {
+  top: 32px;
+  left: 0px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text009 {
+  top: 9px;
+  left: 19px;
+  color: var(--dl-color-default-border);
+  width: 51px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-text011 {
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-row02 {
+  top: 168px;
+  left: 298px;
+  width: 238px;
+  height: 74px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-floors2 {
+  top: 0px;
+  left: 0px;
+  width: 238px;
+  height: 74px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-small-dropdown02 {
+  top: 32px;
+  left: 0px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text013 {
+  top: 11px;
+  left: 17.41463279724121px;
+  color: var(--dl-color-default-extratext);
+  width: 204px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-ickeyboardarrowdown48px1 {
+  top: 11px;
+  left: 208px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-text018 {
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-row03 {
+  top: 407px;
+  left: 31px;
+  width: 238px;
+  height: 74px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-floors3 {
+  top: 0px;
+  left: 0px;
+  width: 238px;
+  height: 74px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-small-dropdown03 {
+  top: 32px;
+  left: 0px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text020 {
+  top: 9px;
+  left: 17px;
+  color: var(--dl-color-default-border);
+  width: 204px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-ickeyboardarrowdown48px2 {
+  top: 11px;
+  left: 208px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-text025 {
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-row04 {
+  top: 753px;
+  left: 31px;
+  width: 505px;
+  height: 222px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-floors4 {
+  top: 0px;
+  left: 0px;
+  width: 43px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text027 {
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-textarea {
+  top: 36px;
+  left: 0px;
+  width: 505px;
+  height: 186px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text029 {
+  top: 9px;
+  left: 16.60541534423828px;
+  color: var(--dl-color-default-border);
+  width: 54px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-row05 {
+  top: 753px;
+  left: 625px;
+  width: 190px;
+  height: 222px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-floors5 {
+  top: 0px;
+  left: 0px;
+  width: 75px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text031 {
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-textarea1 {
+  top: 36px;
+  left: 0px;
+  width: 190px;
+  height: 186px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(228, 231, 236, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-border);
+}
+.add-apartment-screen-name {
+  top: 45px;
+  left: 31px;
+  width: 505px;
+  height: 74px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text033 {
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-input {
+  top: 32px;
+  left: 0px;
+  color: rgba(208, 213, 221, 1);
+  width: 505px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: flex-start;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 400;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-small-secondary-button {
+  top: 1053px;
+  left: 31px;
+  width: 164px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 0;
+  border-radius: 5px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-primary);
+}
+.add-apartment-screen-text035 {
+  top: 11px;
+  left: 11.781608581542969px;
+  color: var(--dl-color-default-secondary);
+  width: 141px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: center;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-line17 {
+  top: 708px;
+  left: 31px;
+  width: 1102px;
+  height: 0px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-rooms {
+  top: 45px;
+  left: 628px;
+  width: 508px;
+  height: 148px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-name1 {
+  top: 0px;
+  left: 0px;
+  width: 152px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text037 {
+  color: rgba(16, 24, 40, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 153.52272987365723%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.add-apartment-screen-text038 {
+  color: var(--dl-color-default-normaltext);
+  font-weight: 700;
+}
+.add-apartment-screen-small-dropdown04 {
+  top: 32px;
+  left: 0px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text040 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-small-dropdown05 {
+  top: 106px;
+  left: 0px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text042 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-small-dropdown06 {
+  top: 106px;
+  left: 270px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text044 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-small-dropdown07 {
+  top: 32px;
+  left: 267px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text046 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-rooms1 {
+  top: 286px;
+  left: 625px;
+  width: 508px;
+  height: 296px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-name2 {
+  top: 0px;
+  left: 0px;
+  width: 162px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text048 {
+  color: rgba(16, 24, 40, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 153.52272987365723%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.add-apartment-screen-text049 {
+  color: var(--dl-color-default-normaltext);
+  font-weight: 700;
+}
+.add-apartment-screen-row06 {
+  top: 106px;
+  left: 0px;
+  width: 508px;
+  height: 42px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-small-dropdown08 {
+  top: 0px;
+  left: 0px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text051 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-small-dropdown09 {
+  top: 0px;
+  left: 270px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text053 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-row07 {
+  top: 32px;
+  left: 0px;
+  width: 505px;
+  height: 42px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-small-dropdown10 {
+  top: 0px;
+  left: 0px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text055 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-small-dropdown11 {
+  top: 0px;
+  left: 267px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text057 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-row08 {
+  top: 180px;
+  left: 0px;
+  width: 508px;
+  height: 42px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-small-dropdown12 {
+  top: 0px;
+  left: 270px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text059 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-small-dropdown13 {
+  top: 0px;
+  left: 0px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text061 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-row09 {
+  top: 254px;
+  left: 0px;
+  width: 508px;
+  height: 42px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-small-dropdown14 {
+  top: 0px;
+  left: 270px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text063 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-small-dropdown15 {
+  top: 0px;
+  left: 0px;
+  width: 238px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text065 {
+  top: 8px;
+  left: 17px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-line16 {
+  top: 242px;
+  left: 582px;
+  width: 581px;
+  height: 0px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-service {
+  top: 511px;
+  left: 31px;
+  width: 276px;
+  height: 126px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-checkbox {
+  top: 32px;
+  left: 0px;
+  width: 276px;
+  height: 94px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(228, 231, 236, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0px 0px 0px 0px;
+}
+.add-apartment-screen-group6 {
+  top: 14px;
+  left: 26px;
+  width: 223px;
+  height: 65px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-radiobutton {
+  top: 0px;
+  left: 0px;
+  width: 82px;
+  height: 20px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-checkbox1 {
+  top: 0px;
+  left: 0px;
+  width: 82px;
+  height: 20px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+}
+.add-apartment-screen-text067 {
+  left: 30px;
+  color: var(--dl-color-default-normaltext);
+  width: 52px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-radiobutton1 {
+  top: 0px;
+  left: 141px;
+  width: 82px;
+  height: 20px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-checkbox2 {
+  top: 0px;
+  left: 0px;
+  width: 82px;
+  height: 20px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+}
+.add-apartment-screen-text069 {
+  left: 30px;
+  color: var(--dl-color-default-normaltext);
+  width: 52px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-radiobutton2 {
+  top: 45px;
+  left: 0px;
+  width: 82px;
+  height: 20px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-checkbox3 {
+  top: 0px;
+  left: 0px;
+  width: 82px;
+  height: 20px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+}
+.add-apartment-screen-text071 {
+  left: 30px;
+  color: var(--dl-color-default-normaltext);
+  width: 52px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-radiobutton3 {
+  top: 45px;
+  left: 141px;
+  width: 82px;
+  height: 20px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-checkbox4 {
+  top: 0px;
+  left: 0px;
+  width: 82px;
+  height: 20px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+}
+.add-apartment-screen-text073 {
+  left: 30px;
+  color: var(--dl-color-default-normaltext);
+  width: 52px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-text075 {
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-line15 {
+  top: 0px;
+  left: 582.0283203125px;
+  width: 708px;
+  height: 0px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-footer {
+  top: 1342px;
+  left: 272px;
+  width: 1240px;
+  height: 46px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25) ;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text077 {
+  top: 10px;
+  left: 595px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-header {
+  top: 0px;
+  left: 272px;
+  width: 1240px;
+  height: 67px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25) ;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-searchbar {
+  top: 15px;
+  left: 29px;
+  width: 348px;
+  height: 37px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 0;
+  border-radius: 12px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text079 {
+  top: 8px;
+  left: 14px;
+  color: var(--dl-color-default-border);
+  width: 200px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-search {
+  top: 8px;
+  left: 319px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-profile {
+  top: 0px;
+  left: 968px;
+  width: 272px;
+  height: 67px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+.add-apartment-screen-info {
+  top: 11px;
+  left: 24px;
+  width: 158px;
+  height: 45px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-avatar {
+  top: 0px;
+  left: 0px;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-text081 {
+  left: 53px;
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-text083 {
+  top: 24px;
+  left: 53px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-line13 {
+  top: 0px;
+  left: 0px;
+  width: 67px;
+  height: 0px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-notifications {
+  top: 18px;
+  left: 920px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-navigator {
+  top: 0px;
+  left: 0px;
+  width: 272px;
+  height: 1388px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25) ;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo {
+  top: 0px;
+  left: 0px;
+  width: 272px;
+  height: 67px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-shadow: 0px 1px 0px 0px rgba(228, 231, 236, 1) ;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-text085 {
+  top: 15px;
+  left: 14px;
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-line12 {
+  top: 67px;
+  left: 0px;
+  width: 272px;
+  height: 0px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-profile1 {
+  top: 67px;
+  left: 0px;
+  width: 272px;
+  height: 86px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+.add-apartment-screen-info1 {
+  top: 21px;
+  left: 14px;
+  width: 158px;
+  height: 45px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-avatar1 {
+  top: 0px;
+  left: 0px;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-text087 {
+  left: 53px;
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-text089 {
+  top: 24px;
+  left: 53px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-dashboard {
+  top: 166px;
+  left: 0px;
+  width: 272px;
+  height: 53px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-dashboard1 {
+  top: 14px;
+  left: 22px;
+  width: 103px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo01 {
+  top: 0px;
+  left: 33px;
+  width: 70px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text091 {
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-home {
+  top: 0px;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-building {
+  top: 256px;
+  left: 0px;
+  width: 272px;
+  height: 53px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo02 {
+  top: 14px;
+  left: 22px;
+  width: 93px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-apartment {
+  top: 0px;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+}
+.add-apartment-screen-group {
+  top: 0px;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-group1 {
+  top: 3.125px;
+  left: 3.125px;
+  width: 18.75px;
+  height: 18.75px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-vector {
+  top: 0px;
+  left: 0px;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-text093 {
+  left: 33px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-text095 {
+  top: 231px;
+  left: 14px;
+  color: var(--dl-color-default-border);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-group7 {
+  top: 446px;
+  left: 0px;
+  width: 272px;
+  height: 318px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-customer {
+  top: 159px;
+  left: 0px;
+  width: 272px;
+  height: 53px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo03 {
+  top: 14px;
+  left: 22px;
+  width: 122px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo04 {
+  top: 0px;
+  left: 33px;
+  width: 89px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo05 {
+  top: 0px;
+  left: 0px;
+  width: 89px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text097 {
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-users {
+  top: 0px;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-employee {
+  top: 212px;
+  left: 0px;
+  width: 272px;
+  height: 53px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo06 {
+  top: 14px;
+  left: 22px;
+  width: 108px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo07 {
+  top: 0px;
+  left: 33px;
+  width: 75px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo08 {
+  top: 0px;
+  left: 0px;
+  width: 75px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo09 {
+  top: 0px;
+  left: 0px;
+  width: 75px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text099 {
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-userfriends {
+  top: 0px;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-contract {
+  top: 0px;
+  left: 0px;
+  width: 272px;
+  height: 53px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo10 {
+  top: 14px;
+  left: 25px;
+  width: 104px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo11 {
+  top: 0px;
+  left: 30px;
+  width: 74px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text101 {
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-filecontract {
+  top: 2px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-bill {
+  top: 53px;
+  left: 0px;
+  width: 272px;
+  height: 53px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo12 {
+  top: 14px;
+  left: 26px;
+  width: 92px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo13 {
+  top: 0px;
+  left: 29px;
+  width: 63px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text103 {
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-fileinvoice {
+  top: 2px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-voucher {
+  top: 106px;
+  left: 0px;
+  width: 272px;
+  height: 53px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo14 {
+  top: 14px;
+  left: 23px;
+  width: 122px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo15 {
+  top: 0px;
+  left: 32px;
+  width: 90px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text105 {
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-ticketalt {
+  top: 0px;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-request {
+  top: 265px;
+  left: 0px;
+  width: 272px;
+  height: 53px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo16 {
+  top: 14px;
+  left: 55px;
+  width: 60px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo17 {
+  top: 0px;
+  left: 0px;
+  width: 60px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo18 {
+  top: 0px;
+  left: 0px;
+  width: 60px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo19 {
+  top: 0px;
+  left: 0px;
+  width: 60px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text107 {
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-vector1 {
+  top: 17px;
+  left: 24px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-dropdown {
+  top: 309px;
+  left: 0px;
+  width: 272px;
+  height: 137px;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+}
+.add-apartment-screen-apartment1 {
+  top: 0px;
+  left: 0px;
+  width: 272px;
+  height: 53px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo20 {
+  top: 14px;
+  left: 22px;
+  width: 86px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo21 {
+  top: 0px;
+  left: 33px;
+  width: 53px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text109 {
+  color: var(--dl-color-default-primary);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-nightshelter {
+  top: 0px;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-angledown {
+  top: 16px;
+  left: 223px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.add-apartment-screen-apartmenttype1 {
+  top: 53px;
+  left: 0px;
+  width: 272px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo22 {
+  top: 11px;
+  left: 25px;
+  width: 120px;
+  height: 21px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo23 {
+  top: -1.1368683772161603e-13px;
+  left: 30px;
+  width: 90px;
+  height: 21px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo24 {
+  top: 0px;
+  left: 0px;
+  width: 90px;
+  height: 21px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text111 {
+  color: var(--dl-color-default-primary);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-longarrowaltright {
+  top: 1px;
+  left: 0px;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-apartmenttype2 {
+  top: 95px;
+  left: 0px;
+  width: 272px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo25 {
+  top: 11px;
+  left: 25px;
+  width: 132px;
+  height: 21px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo26 {
+  top: 0px;
+  left: 30px;
+  width: 102px;
+  height: 21px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo27 {
+  top: 0px;
+  left: 0px;
+  width: 102px;
+  height: 21px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text113 {
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-longarrowaltright1 {
+  top: 1px;
+  left: 0px;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-checkattendance {
+  top: 764px;
+  left: 0px;
+  width: 272px;
+  height: 53px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  background-color: var(--dl-color-default-secondary);
+}
+.add-apartment-screen-logo28 {
+  top: 14px;
+  left: 55px;
+  width: 202px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo29 {
+  top: 0px;
+  left: 0px;
+  width: 156px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo30 {
+  top: 0px;
+  left: 0px;
+  width: 156px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-logo31 {
+  top: 0px;
+  left: 0px;
+  width: 156px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.add-apartment-screen-text115 {
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.add-apartment-screen-angleleft {
+  top: 2px;
+  left: 182px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-apartment-screen-usercheck {
+  top: 14px;
+  left: 22px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}

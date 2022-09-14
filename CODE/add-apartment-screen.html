@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html lang="english">
+  <head>
+    <title>exported project</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./add-apartment-screen.css" rel="stylesheet" />
+
+      <div class="add-apartment-screen-container">
+        <div class="add-apartment-screen-add-apartment-screen">
+          <div class="add-apartment-screen-main">
+            <span class="add-apartment-screen-text textxlsemibold">
+              <span>Thêm căn hộ</span>
+            </span>
+            <div class="add-apartment-screen-list">
+              <div class="add-apartment-screen-row">
+                <div class="add-apartment-screen-floors">
+                  <div class="add-apartment-screen-small-dropdown">
+                    <span class="add-apartment-screen-text002 textmd">
+                      <span>
+                        <span>5</span>
+                        <br />
+                        <span></span>
+                      </span>
+                    </span>
+                    <img
+                      src="public/playground_assets/ickeyboardarrowdown48px4157-o6eg.svg"
+                      alt="ickeyboardarrowdown48px4157"
+                      class="add-apartment-screen-ickeyboardarrowdown48px"
+                    />
+                  </div>
+                  <span class="add-apartment-screen-text007 textmdsemibold">
+                    <span>Số phòng</span>
+                  </span>
+                </div>
+              </div>
+              <div class="add-apartment-screen-row01">
+                <div class="add-apartment-screen-floors1">
+                  <div class="add-apartment-screen-small-dropdown01">
+                    <span class="add-apartment-screen-text009 textmd">
+                      <span>Số tiền</span>
+                    </span>
+                  </div>
+                  <span class="add-apartment-screen-text011 textmdsemibold">
+                    <span>Tiền thuê</span>
+                  </span>
+                </div>
+              </div>
+              <div class="add-apartment-screen-row02">
+                <div class="add-apartment-screen-floors2">
+                  <div class="add-apartment-screen-small-dropdown02">
+                    <span class="add-apartment-screen-text013 textmd">
+                      <span>
+                        <span>5 người</span>
+                        <br />
+                        <span></span>
+                      </span>
+                    </span>
+                    <img
+                      src="public/playground_assets/ickeyboardarrowdown48px4158-g96f.svg"
+                      alt="ickeyboardarrowdown48px4158"
+                      class="add-apartment-screen-ickeyboardarrowdown48px1"
+                    />
+                  </div>
+                  <span class="add-apartment-screen-text018 textmdsemibold">
+                    <span>Sức chứa</span>
+                  </span>
+                </div>
+              </div>
+              <div class="add-apartment-screen-row03">
+                <div class="add-apartment-screen-floors3">
+                  <div class="add-apartment-screen-small-dropdown03">
+                    <span class="add-apartment-screen-text020 textmd">
+                      <span>
+                        <span>Toà nhà</span>
+                        <br />
+                        <span></span>
+                      </span>
+                    </span>
+                    <img
+                      src="public/playground_assets/ickeyboardarrowdown48px4158-bw35.svg"
+                      alt="ickeyboardarrowdown48px4158"
+                      class="add-apartment-screen-ickeyboardarrowdown48px2"
+                    />
+                  </div>
+                  <span class="add-apartment-screen-text025 textmdsemibold">
+                    <span>Toà nhà</span>
+                  </span>
+                </div>
+              </div>
+              <div class="add-apartment-screen-row04">
+                <div class="add-apartment-screen-floors4">
+                  <span class="add-apartment-screen-text027 textmdsemibold">
+                    <span>Mô tả</span>
+                  </span>
+                </div>
+                <div class="add-apartment-screen-textarea">
+                  <span class="add-apartment-screen-text029 textmd">
+                    <span>Mô tả</span>
+                  </span>
+                </div>
+              </div>
+              <div class="add-apartment-screen-row05">
+                <div class="add-apartment-screen-floors5">
+                  <span class="add-apartment-screen-text031 textmdsemibold">
+                    <span>Thêm ảnh</span>
+                  </span>
+                </div>
+                <div class="add-apartment-screen-textarea1"></div>
+              </div>
+              <div class="add-apartment-screen-name">
+                <span class="add-apartment-screen-text033 textmdsemibold">
+                  <span>Tên căn hộ</span>
+                </span>
+                <input
+                  type="text"
+                  placeholder="Tên"
+                  class="add-apartment-screen-input"
+                />
+              </div>
+              <button class="add-apartment-screen-small-secondary-button">
+                <span class="add-apartment-screen-text035 textsmsemibold">
+                  <span>Thêm căn hộ</span>
+                </span>
+              </button>
+              <img
+                src="public/playground_assets/line174160-zwjn.svg"
+                alt="Line174160"
+                class="add-apartment-screen-line17"
+              />
+              <div class="add-apartment-screen-rooms">
+                <div class="add-apartment-screen-name1">
+                  <span class="add-apartment-screen-text037">
+                    <span class="add-apartment-screen-text038">Phòng</span>
+                    <span>(nhập số lượng)</span>
+                  </span>
+                </div>
+                <div class="add-apartment-screen-small-dropdown04">
+                  <span class="add-apartment-screen-text040 textmd">
+                    <span>Phòng khách</span>
+                  </span>
+                </div>
+                <div class="add-apartment-screen-small-dropdown05">
+                  <span class="add-apartment-screen-text042 textmd">
+                    <span>Nhà bếp</span>
+                  </span>
+                </div>
+                <div class="add-apartment-screen-small-dropdown06">
+                  <span class="add-apartment-screen-text044 textmd">
+                    <span>Nhà vệ sinh</span>
+                  </span>
+                </div>
+                <div class="add-apartment-screen-small-dropdown07">
+                  <span class="add-apartment-screen-text046 textmd">
+                    <span>Phòng ngủ</span>
+                  </span>
+                </div>
+              </div>
+              <div class="add-apartment-screen-rooms1">
+                <div class="add-apartment-screen-name2">
+                  <span class="add-apartment-screen-text048">
+                    <span class="add-apartment-screen-text049">Nội thất</span>
+                    <span>(nhập số lượng)</span>
+                  </span>
+                </div>
+                <div class="add-apartment-screen-row06">
+                  <div class="add-apartment-screen-small-dropdown08">
+                    <span class="add-apartment-screen-text051 textmd">
+                      <span>Tủ</span>
+                    </span>
+                  </div>
+                  <div class="add-apartment-screen-small-dropdown09">
+                    <span class="add-apartment-screen-text053 textmd">
+                      <span>Tivi</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="add-apartment-screen-row07">
+                  <div class="add-apartment-screen-small-dropdown10">
+                    <span class="add-apartment-screen-text055 textmd">
+                      <span>Quạt</span>
+                    </span>
+                  </div>
+                  <div class="add-apartment-screen-small-dropdown11">
+                    <span class="add-apartment-screen-text057 textmd">
+                      <span>Máy lạnh</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="add-apartment-screen-row08">
+                  <div class="add-apartment-screen-small-dropdown12">
+                    <span class="add-apartment-screen-text059 textmd">
+                      <span>Bàn trang điểm</span>
+                    </span>
+                  </div>
+                  <div class="add-apartment-screen-small-dropdown13">
+                    <span class="add-apartment-screen-text061 textmd">
+                      <span>Bộ bàn ghế</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="add-apartment-screen-row09">
+                  <div class="add-apartment-screen-small-dropdown14">
+                    <span class="add-apartment-screen-text063 textmd">
+                      <span>Sofa</span>
+                    </span>
+                  </div>
+                  <div class="add-apartment-screen-small-dropdown15">
+                    <span class="add-apartment-screen-text065 textmd">
+                      <span>Bộ giường ngủ</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <img
+                src="public/playground_assets/line164164-7dvj.svg"
+                alt="Line164164"
+                class="add-apartment-screen-line16"
+              />
+              <div class="add-apartment-screen-service">
+                <div class="add-apartment-screen-checkbox">
+                  <div class="add-apartment-screen-group6">
+                    <div class="add-apartment-screen-radiobutton">
+                      <div class="add-apartment-screen-checkbox1">
+                        <span class="add-apartment-screen-text067 textsm">
+                          <span>Điện</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="add-apartment-screen-radiobutton1">
+                      <div class="add-apartment-screen-checkbox2">
+                        <span class="add-apartment-screen-text069 textsm">
+                          <span>Nước</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="add-apartment-screen-radiobutton2">
+                      <div class="add-apartment-screen-checkbox3">
+                        <span class="add-apartment-screen-text071 textsm">
+                          <span>Wifi</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="add-apartment-screen-radiobutton3">
+                      <div class="add-apartment-screen-checkbox4">
+                        <span class="add-apartment-screen-text073 textsm">
+                          <span>Giữ xe</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span class="add-apartment-screen-text075 textmdsemibold">
+                  <span>Dịch vụ</span>
+                </span>
+              </div>
+              <img
+                src="public/playground_assets/line154165-d8w7.svg"
+                alt="Line154165"
+                class="add-apartment-screen-line15"
+              />
+            </div>
+          </div>
+          <div class="add-apartment-screen-footer">
+            <span class="add-apartment-screen-text077 textmdsemibold">
+              <span>Footer</span>
+            </span>
+          </div>
+          <div class="add-apartment-screen-header">
+            <div class="add-apartment-screen-searchbar">
+              <span class="add-apartment-screen-text079 textsm">
+                <span>Tìm kiếm...</span>
+              </span>
+              <img
+                src="public/playground_assets/searchi416-tvye.svg"
+                alt="searchI416"
+                class="add-apartment-screen-search"
+              />
+            </div>
+            <div class="add-apartment-screen-profile">
+              <div class="add-apartment-screen-info">
+                <img
+                  src="public/playground_assets/avatari416-b1k.svg"
+                  alt="AvatarI416"
+                  class="add-apartment-screen-avatar"
+                />
+                <span class="add-apartment-screen-text081 textmdsemibold">
+                  <span>Nguyen Van B</span>
+                </span>
+                <span class="add-apartment-screen-text083 textsmsemibold">
+                  <span>Admin</span>
+                </span>
+              </div>
+              <img
+                src="public/playground_assets/line13i416-t9o.svg"
+                alt="Line13I416"
+                class="add-apartment-screen-line13"
+              />
+            </div>
+            <img
+              src="public/playground_assets/notificationsi416-1e0a.svg"
+              alt="NotificationsI416"
+              class="add-apartment-screen-notifications"
+            />
+          </div>
+          <div class="add-apartment-screen-navigator">
+            <div class="add-apartment-screen-logo">
+              <span class="add-apartment-screen-text085 displaysmsemibold">
+                <span>Appname</span>
+              </span>
+              <img
+                src="public/playground_assets/line12i416-yxa5.svg"
+                alt="Line12I416"
+                class="add-apartment-screen-line12"
+              />
+            </div>
+            <div class="add-apartment-screen-profile1">
+              <div class="add-apartment-screen-info1">
+                <img
+                  src="public/playground_assets/avatari416-qk9f.svg"
+                  alt="AvatarI416"
+                  class="add-apartment-screen-avatar1"
+                />
+                <span class="add-apartment-screen-text087 textmdsemibold">
+                  <span>Nguyen Van B</span>
+                </span>
+                <span class="add-apartment-screen-text089 textsmsemibold">
+                  <span>Admin</span>
+                </span>
+              </div>
+            </div>
+            <div class="add-apartment-screen-dashboard">
+              <div class="add-apartment-screen-dashboard1">
+                <div class="add-apartment-screen-logo01">
+                  <span class="add-apartment-screen-text091 textmdsemibold">
+                    <span>Thống kê</span>
+                  </span>
+                </div>
+                <img
+                  src="public/playground_assets/homei416-egeee.svg"
+                  alt="HomeI416"
+                  class="add-apartment-screen-home"
+                />
+              </div>
+            </div>
+            <div class="add-apartment-screen-building">
+              <div class="add-apartment-screen-logo02">
+                <div class="add-apartment-screen-apartment">
+                  <div class="add-apartment-screen-group"></div>
+                  <div class="add-apartment-screen-group1">
+                    <img
+                      src="public/playground_assets/vectori416-o0su.svg"
+                      alt="VectorI416"
+                      class="add-apartment-screen-vector"
+                    />
+                  </div>
+                </div>
+                <span class="add-apartment-screen-text093 textmdsemibold">
+                  <span>Toà nhà</span>
+                </span>
+              </div>
+            </div>
+            <span class="add-apartment-screen-text095 textmdsemibold">
+              <span>Quản lý</span>
+            </span>
+            <div class="add-apartment-screen-group7">
+              <div class="add-apartment-screen-customer">
+                <div class="add-apartment-screen-logo03">
+                  <div class="add-apartment-screen-logo04">
+                    <div class="add-apartment-screen-logo05">
+                      <span class="add-apartment-screen-text097 textmdsemibold">
+                        <span>Khách hàng</span>
+                      </span>
+                    </div>
+                  </div>
+                  <img
+                    src="public/playground_assets/usersi416-3yvs.svg"
+                    alt="usersI416"
+                    class="add-apartment-screen-users"
+                  />
+                </div>
+              </div>
+              <div class="add-apartment-screen-employee">
+                <div class="add-apartment-screen-logo06">
+                  <div class="add-apartment-screen-logo07">
+                    <div class="add-apartment-screen-logo08">
+                      <div class="add-apartment-screen-logo09">
+                        <span
+                          class="add-apartment-screen-text099 textmdsemibold"
+                        >
+                          <span>Nhân viên</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    src="public/playground_assets/userfriendsi416-a39nq.svg"
+                    alt="userfriendsI416"
+                    class="add-apartment-screen-userfriends"
+                  />
+                </div>
+              </div>
+              <div class="add-apartment-screen-contract">
+                <div class="add-apartment-screen-logo10">
+                  <div class="add-apartment-screen-logo11">
+                    <span class="add-apartment-screen-text101 textmdsemibold">
+                      <span>Hợp đồng</span>
+                    </span>
+                  </div>
+                  <img
+                    src="public/playground_assets/filecontracti416-cevr.svg"
+                    alt="filecontractI416"
+                    class="add-apartment-screen-filecontract"
+                  />
+                </div>
+              </div>
+              <div class="add-apartment-screen-bill">
+                <div class="add-apartment-screen-logo12">
+                  <div class="add-apartment-screen-logo13">
+                    <span class="add-apartment-screen-text103 textmdsemibold">
+                      <span>Hoá đơn</span>
+                    </span>
+                  </div>
+                  <img
+                    src="public/playground_assets/fileinvoicei416-kswr.svg"
+                    alt="fileinvoiceI416"
+                    class="add-apartment-screen-fileinvoice"
+                  />
+                </div>
+              </div>
+              <div class="add-apartment-screen-voucher">
+                <div class="add-apartment-screen-logo14">
+                  <div class="add-apartment-screen-logo15">
+                    <span class="add-apartment-screen-text105 textmdsemibold">
+                      <span>Mã giảm giá</span>
+                    </span>
+                  </div>
+                  <img
+                    src="public/playground_assets/ticketalti416-vdbq.svg"
+                    alt="ticketaltI416"
+                    class="add-apartment-screen-ticketalt"
+                  />
+                </div>
+              </div>
+              <div class="add-apartment-screen-request">
+                <div class="add-apartment-screen-logo16">
+                  <div class="add-apartment-screen-logo17">
+                    <div class="add-apartment-screen-logo18">
+                      <div class="add-apartment-screen-logo19">
+                        <span
+                          class="add-apartment-screen-text107 textmdsemibold"
+                        >
+                          <span>Yêu cầu</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="public/playground_assets/vectori416-7yn.svg"
+                  alt="VectorI416"
+                  class="add-apartment-screen-vector1"
+                />
+              </div>
+            </div>
+            <div class="add-apartment-screen-dropdown">
+              <div class="add-apartment-screen-apartment1">
+                <div class="add-apartment-screen-logo20">
+                  <div class="add-apartment-screen-logo21">
+                    <span class="add-apartment-screen-text109 textmdsemibold">
+                      <span>Căn hộ</span>
+                    </span>
+                  </div>
+                  <img
+                    src="public/playground_assets/nightshelteri416-eou.svg"
+                    alt="NightshelterI416"
+                    class="add-apartment-screen-nightshelter"
+                  />
+                </div>
+                <img
+                  src="public/playground_assets/angledowni416-seyg.svg"
+                  alt="angledownI416"
+                  class="add-apartment-screen-angledown"
+                />
+              </div>
+              <div class="add-apartment-screen-apartmenttype1">
+                <div class="add-apartment-screen-logo22">
+                  <div class="add-apartment-screen-logo23">
+                    <div class="add-apartment-screen-logo24">
+                      <span class="add-apartment-screen-text111 textsm">
+                        <span>Một hợp đồng</span>
+                      </span>
+                    </div>
+                  </div>
+                  <img
+                    src="public/playground_assets/longarrowaltrighti416-01vn.svg"
+                    alt="longarrowaltrightI416"
+                    class="add-apartment-screen-longarrowaltright"
+                  />
+                </div>
+              </div>
+              <div class="add-apartment-screen-apartmenttype2">
+                <div class="add-apartment-screen-logo25">
+                  <div class="add-apartment-screen-logo26">
+                    <div class="add-apartment-screen-logo27">
+                      <span class="add-apartment-screen-text113 textsm">
+                        <span>Nhiều hợp đồng</span>
+                      </span>
+                    </div>
+                  </div>
+                  <img
+                    src="public/playground_assets/longarrowaltrighti416-ne7.svg"
+                    alt="longarrowaltrightI416"
+                    class="add-apartment-screen-longarrowaltright1"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="add-apartment-screen-checkattendance">
+              <div class="add-apartment-screen-logo28">
+                <div class="add-apartment-screen-logo29">
+                  <div class="add-apartment-screen-logo30">
+                    <div class="add-apartment-screen-logo31">
+                      <span class="add-apartment-screen-text115 textmdsemibold">
+                        <span>Điểm danh nhân viên</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="public/playground_assets/anglelefti416-nnlh.svg"
+                  alt="angleleftI416"
+                  class="add-apartment-screen-angleleft"
+                />
+              </div>
+              <img
+                src="public/playground_assets/userchecki416-g48.svg"
+                alt="usercheckI416"
+                class="add-apartment-screen-usercheck"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
