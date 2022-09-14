@@ -1,0 +1,337 @@
+.signin-screen-container {
+  min-height: 100vh;
+}
+.signin-screen-signin-screen {
+  width: 100%;
+  height: 982px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 1512px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.signin-screen-image {
+  top: 0px;
+  left: 0px;
+  width: 848px;
+  height: 982px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(16, 24, 40, 0.25);
+}
+.signin-screen-apartmentphoto11 {
+  top: 0px;
+  left: 0px;
+  width: 848px;
+  height: 982px;
+  position: absolute;
+  box-sizing: border-box;
+  border-color: transparent;
+}
+.signin-screen-form {
+  top: 0px;
+  left: 848px;
+  width: 664px;
+  height: 982px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+}
+.signin-screen-login-form {
+  top: 220px;
+  left: 158px;
+  width: 348px;
+  height: 541px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.signin-screen-input {
+  top: 106px;
+  left: 0px;
+  width: 348px;
+  height: 187px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.signin-screen-email {
+  top: 0px;
+  left: 0px;
+  width: 348px;
+  height: 77px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.signin-screen-input1 {
+  top: 35px;
+  left: 0px;
+  color: rgba(208, 213, 221, 1);
+  width: 348px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: flex-start;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 400;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.signin-screen-text {
+  color: var(--dl-color-default-normaltext);
+  width: 97px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.signin-screen-password {
+  top: 110px;
+  left: 0px;
+  width: 348px;
+  height: 77px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.signin-screen-buttongroup {
+  top: 355px;
+  left: 0px;
+  width: 348px;
+  height: 186px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.signin-screen-priimary-button {
+  top: 0px;
+  left: 0px;
+  width: 348px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-primary);
+}
+.signin-screen-text04 {
+  top: 11px;
+  left: 25px;
+  color: var(--dl-color-default-secondary);
+  width: 298px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: center;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.signin-screen-or {
+  top: 84px;
+  left: 42px;
+  width: 261.0177001953125px;
+  height: 21px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.signin-screen-text11 {
+  left: 115.00885009765625px;
+  color: var(--dl-color-default-extratext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: center;
+  line-height: 153.52272987365723%;
+}
+.signin-screen-line10 {
+  top: 11px;
+  left: 0px;
+  width: 105px;
+  height: 0px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.signin-screen-line11 {
+  top: 11px;
+  left: 156.00885009765625px;
+  width: 105px;
+  height: 0px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.signin-screen-buttonwith-google {
+  top: 144px;
+  left: 0px;
+  width: 348px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-secondary);
+}
+.signin-screen-group4 {
+  top: 9px;
+  left: 20px;
+  width: 236px;
+  height: 25px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.signin-screen-text13 {
+  
+  left: 72px;
+  color: var(--dl-color-default-primary);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
+.signin-screen-google {
+  top: 2px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.signin-screen-text15 {
+  left: 83px;
+  color: var(--dl-color-default-normaltext);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 153.52272987365723%;
+}
