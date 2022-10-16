@@ -1,0 +1,115 @@
+.main-head {
+  top: 0px;
+  left: 0px;
+  width: 99%;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+.main-head-center {
+  margin: auto;
+  width: 98%;
+  height: 45px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.search-list{
+  top: 0px;
+  left: 0px;
+  width: 30%;
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+.table-area{
+  top: 50px;
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  box-sizing: border-box;
+  flex-shrink: 1;
+  overflow: auto;
+}
+th, td{
+  height: 35px;
+  padding: 10px;
+  text-align: left;
+}
+th{
+  background-color: rgba(226, 226, 226, 0.675) ;
+}
+table {
+  left: 16px;
+  width: 96%;
+  height: auto;
+  min-width: 600px;
+  overflow: auto;
+  position: absolute;
+}
+tr {
+  border-bottom: 1px solid rgba(119, 119, 119, 0.775);
+  height: 48px;
+}
+
+.edit-icon {
+  left: 10px;
+  width: 25px;
+  height: 25px;
+}
+.trash-icon {
+  left: 25px;
+  width: 22px;
+  height: 22px;
+  position: relative;
+}
+.line14 {
+  top: 48px;
+  left: 0px;
+  width: 1128px;
+  height: 0px;
+  position: absolute;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.addbutton-text {
+  top: 11px;
+  left: 54px;
+  color: var(--dl-color-default-secondary);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: center;
+  line-height: 153.52272987365723%;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.addbutton {
+  float: right;
+  top: 0px;
+  right: 25px;
+  width: 20%;
+  max-width: 180px;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(208, 213, 221, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 22px;
+  background-color: var(--dl-color-default-primary);
+}
+.pluscircle {
+  top: 11px;
+  left: 20px;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  box-sizing: border-box;
+}
