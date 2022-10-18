@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React,{ useEffect, useState } from 'react';
-import ReactDOM from "react-dom";
 import {Routes, Route, Link, useNavigate} from 'react-router-dom';
 import '../style/main.css';
 import '../style/list.css';
@@ -20,10 +19,11 @@ const colname =
 function Main () {
   const [buildings, setBuilding] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:1337/api/buildings')
-      .then((response) => response.json())
-      .then(({ data }) => setBuilding(data)); // <-- save the data array
-  }, []);
+    axios
+      .get('http://localhost:1337/api/buildings')
+      .then(({ data }) => setBuilding(data.data))
+  }, [])
+  
   const navigate = useNavigate();
   const handleClick = (event) =>
   {
@@ -59,7 +59,7 @@ function Main () {
             <tr className="rowtitle">
               {colname.map((a)=><th className="textsm" style={{width: a.width}}>{a.title}</th>)}
             </tr>
-            {colname && buildings.map(data => 
+            {buildings.map(data => 
             <tr>
               <td className="textsm">{data.id}</td>
               <td className="textsm">{data.attributes.Building_Name}</td>
