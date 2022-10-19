@@ -25,13 +25,33 @@ export const checkbox = (name, value, text) =>
   )
 }
 
-export const dropdown = (title, name, list) =>
-{
-  return (
-    <><span className="form-subtitle textmdsemibold">{title}</span>
-      <select name={name} className="form-select">
-        {list.map((x) => <option value={x.value}>{x.text}</option>)}
-      </select></>
+export function dropdown (title, name, handle, isDisable, list, kind, result, holder1, holder2){
+  const placeholder = (list, holder1, holder2) => 
+  {
+    if ((list!=undefined))
+    return (<option value="" selected disabled>{holder1}</option>)
+    else return (<option value="" disabled selected>{holder2}</option>)
+  }
+  const renderlist = (list, kind) =>
+  {
+    if (list!=undefined) 
+    {
+      if (kind=="address")
+      return list.map((x) => <option value={x.code}>{x.name}</option>)
+      else if (kind=="building")
+      return list.map((x) => <option value={x.id}>{x.attributes.Building_Name}</option>)
+      else if (kind=="floor")
+      return list.map((x) => <option value={x}>{x}</option>)
+    }
+  }
+  return(
+  <>
+  <span className="form-subtitle textmdsemibold">{title}</span>
+  <select name={name} className="form-select" disabled={isDisable} onChange={(e) => handle(e)} value={result}>
+    {placeholder (list, holder1, holder2)}
+    {renderlist (list, kind)}
+  </select>
+  </>
   )
 }
 
