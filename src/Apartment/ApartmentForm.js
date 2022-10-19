@@ -1,18 +1,17 @@
-import { func } from "prop-types";
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import React,{ useEffect, useState } from 'react';
 import {Routes, Route, Link, useNavigate} from 'react-router-dom'
+import axios from 'axios';
 import ApartmentList from "./ApartmentList"
 import '../style/form.css'
-import {checkbox,input,dropdown,choice} from "../style/JSfunc";
+import {input,dropdown} from "../style/JSfunc";
 
 
 let room = 
 [
-  {name: "livingroom", text: "Phòng khách"},
-  {name: "kitchen", text: "Phòng bếp"},
-  {name: "bedroom", text: "Phòng ngủ"},
-  {name: "toilet", text: "Nhà vệ sinh"}
+  {name: "Livingroom", text: "Phòng khách"},
+  {name: "Kitchen", text: "Phòng bếp"},
+  {name: "Bedroom", text: "Phòng ngủ"},
+  {name: "Toilet", text: "Nhà vệ sinh"}
 ]
 let funiture = 
 [
@@ -31,42 +30,90 @@ let budget = [
     {value: "water", text: "Nước"},
     {value: "park", text: "Giữ xe"}
 ]
-let building_names = 
-[
-  {value: 1, text: "1"},
-  {value: 2, text: "2"},
-  {value: 3, text: "3"}
-]
 
 function Main () {
+  const [buildings, loadBuilding]= useState([]);
+  const [maxfloor, setFloor]= useState();
+  const [buildingname, setbuildingname]= useState();
+  const [f1, setF1]= useState(true);
+  const [numFloor, setNumFloor]= useState();
   const navigate = useNavigate();
+  useEffect( ()=>{
+    const foo= async ()=>{
+      const a= await fetch("http://localhost:1337/api/buildings");
+      const b= await a.json();
+      loadBuilding(await b.data);
+    }
+    foo();
+  },[]);
+
+  const createNewApartment = async (data) => {
+    await axios
+    .post("http://localhost:1337/api/apartments", data)
+  }
+  const handleBuildingName = (event) =>
+  {
+    setbuildingname(event.target.value);
+    setNumFloor("");
+    setF1(false);
+    event.preventDefault();
+  }
+  useEffect( ()=>{
+    const foo= async ()=>{
+      const a= await fetch(`http://localhost:1337/api/buildings/${buildingname}`);
+      const b= await a.json();
+      setFloor(await b.data);
+    }
+    foo();
+  },[buildingname]);
+  const floors = ((maxfloor!=null) ? Array.from({length: maxfloor.attributes.Num_of_Floors}, (_, i) => i + 1) :null);
+
+  const handleFloor = (event) =>
+  {
+    setNumFloor(event.target.value);
+    event.preventDefault();
+  }
+
   const handleClick = (event) => {
     event.preventDefault();
+    let {Apartment_Name, Size, Capacity, Rent_Fee, Livingroom, Kitchen, Bedroom, Toilet} = document.forms[0];
+    const data = {
+      'data': {
+          "Apartment_Name": Apartment_Name.value,
+          "Size": Size.value,
+          "Capacity": Capacity.value,
+          "Rent_Fee": Rent_Fee.value,
+          "Livingroom": Livingroom.value,
+          "Kitchen": Kitchen.value,
+          "Bedroom": Bedroom.value,
+          "Toilet": Toilet.value,
+      }
+    }
+    createNewApartment(data);
     navigate('/Apartment/ApartmentList');
   }
   const form = (
-    <div>
+    <>
       <span className="function-title textxlsemibold">Thêm căn hộ</span>
       <form onSubmit={handleClick} className="main-zone">
         <div className="big-row">
           <div className="col-left">
             <div className="item-area">
-              {input(2,"apartment_name","Tên","Tên căn hộ")}
+              {input(2,"Apartment_Name","Tên","Tên căn hộ")}
             </div>
             <div className="item-area double-col">
-              {input(1,"totalroom","Nhập số phòng","Số phòng")}
-              {input(1,"people","Nhập số người","Sức chứa")}
-            <div/>
+              {input(1,"Size","Đơn vị: m2","Diện tích")}
+              {input(1,"Capacity","Nhập số người","Sức chứa")}
             </div>
             <div className="item-area double-col">
-              {input(1,"cost","Nhập số tiền","Tiền thuê")}
-              {dropdown("Toà nhà","building_name",building_names)}
+              {input(1,"Rent_Fee","Nhập số tiền","Tiền thuê")}
+              <div/>
             </div>
-            <div className="item-area">
-              <span className="form-subtitle textmdsemibold">Dịch vụ</span>
-              <div className="checkbox-area">
-                {budget.map((x) => checkbox("budget",x.value,x.text))}
-              </div>
+            <div className="item-area double-col">
+              {dropdown("Toà nhà","building_name", handleBuildingName, false, 
+              buildings, "building", buildingname, "Chọn tòa nhà", "Chọn tòa nhà")}
+              {dropdown("Tầng","Floor", handleFloor, f1, 
+              floors, "floor", numFloor, "Chọn số tầng", "Vui lòng chọn tòa nhà")}
             </div>
             <div className="item-area">
               <span className="form-subtitle textmdsemibold">Mô tả</span>
@@ -97,10 +144,10 @@ function Main () {
           </button>
         </div>
       </form>
-    </div>
+    </>
   )
   return (
-    {form}
+    <div>{form}</div>
   )
 }
 
