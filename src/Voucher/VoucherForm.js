@@ -54,10 +54,6 @@ function Main (){
 
   useEffect(() => {loadItem('apartments','',setApartments)}, [])
 
-  function ches (x)
-  {
-    return (x.checked==true)
-  }
   const handleClick = (event) => {
     event.preventDefault();
     let {vouchername, startday, starttime, endday, endtime, Amount, Percentage, maxDiscount, apply_customer} = document.forms[0];
