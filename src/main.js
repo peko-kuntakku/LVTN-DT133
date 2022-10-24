@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Routes, Route, Link, useNavigate} from 'react-router-dom';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 import './style/main.css';
 import './style/list.css';
 import BuildingList from "./Building/BuildingList";
@@ -18,23 +18,16 @@ import BuildingDetail from './Building/BuildingDetail';
 
 const num = [1,2,3,4,5,6,7,8,9]
 
-const Profile = () =>
+const Profile = () => 
 {
-  return (
-  <>
+  return(
     <div className="info-area">
-      <img src="/playground_assets/avatari414-gulf.svg"
-        className="avatar"
-      />
-      <span className="profile-name textmdsemibold">Nguyen Van B</span>
-      <span className="profile-role textsmsemibold">Admin</span>
-    </div>
-    <img
-      alt="Line13I414"
-      src="/playground_assets/line13i414-hri4.svg"
-      className="line13"
+    <img src="/icon/avatar-icon.svg"
+      className="avatar"
     />
-  </>
+    <span className="profile-name textmdsemibold">Nguyen Van B</span>
+    <span className="profile-role textsmsemibold">Admin</span>
+  </div>
   )
 }
 
@@ -45,8 +38,7 @@ function Left_logo ()
         <div className="logo-area">
           <span className="brand displaysmsemibold">Appname</span>
           <img
-            alt="Line12I414"
-            src="/playground_assets/line12i414-v2in.svg"
+            src="/icon/main-appname-line.svg"
             className="line12"
           />
         </div>
@@ -228,9 +220,10 @@ function MainArea ()
   )
 }
 
-const Header = () =>
+
+export default function Main ()
 {
-  return (
+  const Header = (    
     <>
       <div className="search-function">
         <input
@@ -246,16 +239,17 @@ const Header = () =>
         <Profile />
       </div>
       <img
+      alt="Line13I414"
+      src="/icon/notify-profile-line.svg"
+      className="line13"
+      />
+      <img
         alt="NotificationsI414"
         src="/icon/notification-icon.svg"
         className="notifications"
       />
     </>
-  )
-}
-
-export default function Main ()
-{
+  )  
   return (
     <body className="container">
       <div className="main-area">
@@ -265,7 +259,7 @@ export default function Main ()
         <Navigator />
       </div>
       <div className="header">
-        <Header />
+        {Header}
       </div>
     </body>
   ) 
