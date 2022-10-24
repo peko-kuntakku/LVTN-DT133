@@ -51,7 +51,7 @@ function LoginPage ()
         <body className="">
           <div className="signin-screen-left">
             <img
-              src="/playground_assets/apartmentphoto114708-wo1q-900w.png"
+              src="/apartmentphoto114708-wo1q-900w.png"
               alt="apartmentphoto114708"
               className="signin-screen-photo"
             />
@@ -88,20 +88,18 @@ function LoginPage ()
                 <div className="signin-screen-or">
                   <span className="signin-screen-text10 textsm">Hoặc</span>
                   <img
-                    src="/playground_assets/line104723-ivbt.svg"
-                    alt="Line104723"
-                    className="signin-screen-line10"
+                    src="/icon/login-halfline.svg"
+                    className="signin-screen-leftline"
                   />
                   <img
-                    src="/playground_assets/line114724-ums.svg"
-                    alt="Line114724"
-                    className="signin-screen-line11"
+                    src="/icon/login-halfline.svg"
+                    className="signin-screen-rightline"
                   />
                 </div>
                 <button className="signin-screen-buttonwith-google">
                   <span className="signin-screen-text12 textmdsemibold">Đăng nhập với Google</span>
                   <img
-                    src="/playground_assets/googlei472-b5p.svg"
+                    src="/icon/google.svg"
                     alt="googleI472"
                     className="signin-screen-google"
                   />
