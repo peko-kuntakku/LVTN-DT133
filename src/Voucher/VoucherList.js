@@ -1,10 +1,9 @@
-import { func } from "prop-types";
-import React, { useState } from "react";
+import React,{ useEffect, useState } from 'react';
 import {Routes, Route, Link, useNavigate} from 'react-router-dom';
-import VoucherForm from "./VoucherForm";
+import VoucherForm,{setVoucherID} from "./VoucherForm";
 import ReactDOM from "react-dom";
 import '../style/main.css';
-import { table } from "../style/JSfunc";
+import { loadItem, deleteItem } from '../control';
 
 const colname = 
 [
@@ -16,61 +15,64 @@ const colname =
   {width: "12%", title: "Chi tiết"},
   {width: "14%", title: "Cập nhật / Xoá"}
 ]
-const tbcontent = 
-[[
-  "MGG502704P",
-  "21  thg 4, 2022 00:00",
-  "21  thg 4, 2022 00:00",
-  "50",
-  "50",
-  <Link to='/BuildingDetail'>Xem chi tiết</Link>,
-  <><img alt="edit4140" src="/icon/edit-icon.svg" className="edit-icon" />
-    <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" /></>
-],
-[
-  "MGG502704P",
-  "21  thg 4, 2022 00:00",
-  "21  thg 4, 2022 00:00",
-  "50",
-  "50",
-  <Link to='/BuildingDetail'>Xem chi tiết</Link>,
-  <><img alt="edit4140" src="/icon/edit-icon.svg" className="edit-icon" />
-    <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" /></>
-]]
 
 function Main (){
+  const [vouchers, setVouchers] = useState([]);
+  useEffect(() => {loadItem('vouchers','',setVouchers)}, [])
   const navigate = useNavigate();
-  const handleClick = (event) =>
+  const handleEdit = (id) => {
+    setVoucherID(id)
+    navigate('/Voucher/VoucherForm');
+  };
+  const handleAdd = (event) =>
   {
+    setVoucherID(0)
     event.preventDefault();
-    navigate('/VoucherForm');
+    navigate('/Voucher/VoucherForm');
   }
   return(
     <div>
       <span class="function-title textxlsemibold">Mã giảm giá</span>
       <div class="main-zone">
         <div class="main-head">
-          <div class="main-head-center">
-              <input
-                type="text"
-                placeholder="Tìm kiếm"
-                className="searchbar"
-              />
-              <img
-                alt="searchI414"
-                src="/icon/search-icon.svg"
-                className="search-icon"
-              /> 
-            <button class="addbutton" onClick={handleClick}>
-              <span class="addbutton-text textsmsemibold">Thêm mã</span>
+          <div class="search-list">
+            <input
+              type="text"
+              placeholder="Tìm kiếm"
+              className="searchbar"
+            />
+            <img
+              src="/icon/search-icon.svg"
+              className="search-icon"
+            /> 
+          </div>
+          <button class="addbutton" onClick={handleAdd}>
+              <span class="addbutton-text textsmsemibold">Thêm toà nhà</span>
               <img
                 src="./icon/add-icon.svg"
                 class="pluscircle"
               />
             </button>
-          </div>
         </div>
-        <div className="table-area">{table(colname, tbcontent)}</div>
+        <div className="table-area">
+          <table>
+            <tr className="rowtitle">
+              {colname.map((a)=><th className="textsm" style={{width: a.width}}>{a.title}</th>)}
+            </tr>
+            {vouchers.map(({id, attributes}) => 
+            <tr>
+              <td className="textsm">{attributes.Voucher_Name}</td>
+              <td className="textsm">{attributes.Start_at}</td>
+              <td className="textsm">{attributes.Expired_at}</td>
+              <td className="textsm">{attributes.Amount}</td>
+              <td className="textsm">{attributes.Remained}</td>
+              <td className="textsm"><Link to='/Building/BuildingDetail'>Xem chi tiết</Link></td>
+              <td className="textsm"><img alt="edit4140" src="/icon/edit-icon.svg" className="edit-icon" onClick={()=>handleEdit(id)}/>
+                <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" onClick={()=>deleteItem('vouchers', id)}/>
+              </td>
+            </tr>)}
+          </table>
+        </div>      
       </div>
     </div>
   )
@@ -82,7 +84,7 @@ export default function VoucherList ()
     <div>
     <Routes>
       <Route path="/" element={<Main />} />
-      <Route path="/VoucherForm" element={<VoucherForm />} />
+      <Route path="/Voucher/VoucherForm" element={<VoucherForm />} />
     </Routes>
     </div>
   )
