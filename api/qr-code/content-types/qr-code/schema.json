@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "qr_codes",
+  "info": {
+    "singularName": "qr-code",
+    "pluralName": "qr-codes",
+    "displayName": "QR_Code",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "QR_Text": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "Date": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

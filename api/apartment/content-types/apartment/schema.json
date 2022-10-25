@@ -1,0 +1,112 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apartments",
+  "info": {
+    "singularName": "apartment",
+    "pluralName": "apartments",
+    "displayName": "Apartment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ApartmentName": {
+      "type": "string"
+    },
+    "Floor": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "Status": {
+      "type": "integer",
+      "default": 0
+    },
+    "Capacity": {
+      "type": "integer",
+      "required": true
+    },
+    "Size": {
+      "type": "decimal"
+    },
+    "Star": {
+      "type": "decimal",
+      "default": 0,
+      "max": 5,
+      "min": 0
+    },
+    "rates": {
+      "type": "integer",
+      "default": 0
+    },
+    "Rent_Fee": {
+      "type": "biginteger",
+      "required": true
+    },
+    "apartment_id": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bill.bill",
+      "mappedBy": "apartID"
+    },
+    "vouchers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::voucher.voucher",
+      "inversedBy": "apartments"
+    },
+    "apartments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::apartment.apartment"
+    },
+    "properties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::property.property",
+      "mappedBy": "apartment"
+    },
+    "building": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::building.building",
+      "inversedBy": "apartments"
+    },
+    "contracts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contract.contract",
+      "mappedBy": "apartment"
+    },
+    "isSingle": {
+      "type": "boolean",
+      "required": true
+    },
+    "Livingroom": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "Bedroom": {
+      "type": "integer",
+      "required": false,
+      "min": 0,
+      "default": 0
+    },
+    "Kitchen": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "Restroom": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}
