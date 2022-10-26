@@ -1,175 +1,148 @@
-import React from 'react'
-import './BuildingDetail.css'
-import ReactDOM from "react-dom";
+
 import {Routes, Route, Link, useNavigate} from 'react-router-dom';
+import React,{ useEffect, useState } from 'react';
+import { loadItem, loadLocation } from '../control';
+import './BuildingDetail.css'
 
-const col_width = [151, 301, 443, 588, 781, 967]
+let buildingID2 = 0;
 
-function ApartmentListOf () {
-  const rows = () =>
-  {
-    return(
-    <div className="row">
-      <div className="row-text-area">
-      <div className="row-text textsmsemibold">AP-001</div>
-      <div className="row-text textsm" style={{left: col_width[0]}}>A.112</div>
-      <div className="row-text textsm" style={{left: col_width[1]}}>3</div>
-      <div className="row-text textsm" style={{left: col_width[2]}}>98m2</div>
-      <span className="row-text textsm" style={{left: col_width[3]}}>Quận 1</span>
-      <span className="row-text textsm" style={{left: col_width[4]}}>Xem chi tiết</span>
-      <span className="row-text textsm" style={{left: col_width[5]}}>
-      <img
-        src="/icon/edit-icon.svg"
-        className="edit-icon"
-      />
-      <img
-        src="/icon/delete-icon.svg"
-        className="trash-icon"
-      />
-      </span>
-      </div>
-      <img
-        alt="Line144140"
-        src="/playground_assets/line144140-pq.svg"
-        className="buildinglist-screen-line141"
-      />
-    </div>
-    )
-  }
-  return (
-    <div>
-      <div class="rowtitle">
-        {/*
-        <img
-          src="/playground_assets/line144138-fo9r.svg"
-          alt="Line144138"
-          class="buildinglist-screen-line14"
-        />
-        */}
-        <div class="rowtitle-txt-area">
-          <span class="rowtitle-text" >Mã căn hộ</span>
-          <span class="rowtitle-text textsm" style={{left: col_width[0]}}>Tên căn hộ</span>
-          <span class="rowtitle-text textsm" style={{left: col_width[1]}}>Số phòng</span>
-          <span class="rowtitle-text textsm" style={{left: col_width[2]}}>Diện tích</span>
-          <span class="rowtitle-text textsm" style={{left: col_width[3]}}>Địa chỉ</span>
-          <span class="rowtitle-text textsm" style={{left: col_width[4]}}>Chi tiết</span>
-          <span class="rowtitle-text textsm" style={{left: col_width[5]}}>Cập nhật / Xoá</span>
-        </div>
-      </div>
-      <div>
-      {rows()}
-      {rows()}
-      {rows()}
-      {rows()}
-      </div>
-    </div>
-  )
+export const setBuildingID2 = (id) => 
+{
+  buildingID2 = id
 }
 
+const colname = 
+[
+  {width: "12%", title: "Mã căn hộ"},
+  {width: "12%", title: "Tên căn hộ"},
+  {width: "12%", title: "Số phòng"},
+  {width: "12%", title: "Diện tích"},
+  {width: "22%", title: "Trạng thái"},
+  {width: "12%", title: "Chi tiết"},
+]
+
 function Main () {
+  const [building, loadBuilding]= useState();
+
+  const [BuildingName, setBuildingName] = useState();
+  const [NumFloor,setNumFloor] = useState();
+  const [Description,setDescription] = useState();
+  const [Province, setProvince] = useState();
+  const [District, setDistrict] = useState();
+  const [Ward, setWard]= useState();
+  const [ProvinceName, setProvinceName]= useState();
+  const [DistrictName, setDistrictName]= useState();
+  const [WardName, setWardName]= useState();
+  const [Num, setNum]= useState();
+  const [Street, setStreet]= useState();
+
+  const [apartments, loadApartments] = useState([]);
+
+
+  useEffect(() => {
+    loadItem('buildings', buildingID2, loadBuilding,'*');
+  }, [buildingID2])
+
+  useEffect( ()=>{
+    if (building!=null) {
+      const attr=building.attributes
+      setBuildingName(attr.BuildingName)
+      setNumFloor(attr.Num_of_Floors)
+      setDescription(attr.Description)
+      setProvince(attr.location.data.attributes.Province)
+      setDistrict(attr.location.data.attributes.District)
+      setWard(attr.location.data.attributes.Ward)
+      setNum(attr.location.data.attributes.Num)
+      setStreet(attr.location.data.attributes.Street)
+      loadApartments(attr.apartments.data)
+    }
+  },[building]);
+
+  useEffect( ()=>{
+    if (Province!=null) {
+      loadLocation('p',Province,setProvinceName)
+      loadLocation('d',District,setDistrictName)
+      loadLocation('w',Ward,setWardName)
+    }
+  },[District]);
+
   return (
     <div>
       <span className="function-title textxlsemibold">Chi tiết toà nhà</span>
       <div className="main-zone">
-        <div className="building-detail-screen-info">
-          <div className="building-detail-screen-name">
-            <span className="building-detail-screen-text002 textxlsemibold">Toà nhà A</span>
+        <div className="big-row">
+          <div className="col-left">
+            <img
+              alt="apartmentphoto114153"
+              src="/apartmentphoto114153-ag8d-500h.png"
+              className="building-detail-screen-apartmentphoto11"
+            />
           </div>
-          <div className="building-detail-screen-name1">
-            <div className="building-detail-screen-name2">
-              <span className="building-detail-screen-text004 textmd">Số tầng:</span>
+          <div className="col-left">
+            <div className="item-area">
+              <span className="form-subtitle textxlsemibold">Toà nhà {BuildingName}</span>
             </div>
-            <span className="building-detail-screen-text006 textmd">5</span>
-          </div>
-          <div className="building-detail-screen-name3">
-            <span className="building-detail-screen-text007 textmd">Địa chỉ:</span>
-            <span className="building-detail-screen-text009 textmd">
-                Số 52, đường Nguyễn Thị Minh Khai <br/>
-                Phường Bến Nghé, Quận 1,<br/>
-                Thành phố Hồ Chí Minh.<br/>
-            </span>
-          </div>
-          <div className="building-detail-screen-name4">
-            <span className="building-detail-screen-text016 textmd">Dịch vụ:</span>
-            <div className="building-detail-screen-services">
-              <div className="building-detail-screen-electricity">
-                <span className="building-detail-screen-text018 textsm">Giữ xe</span>
-                <img
-                  alt="Done4151"
-                  src="/playground_assets/done4151-1wcj.svg"
-                  className="building-detail-screen-done"
-                />
+            <div className="item-area">
+              <div className="big-row">
+                <div className="col-third-right">
+                  <span className="form-subtitle textlgsemibold">Số tầng:</span>
+                </div>
+                <div className="col-third-left">
+                  <span className="form-subtitle textlgsemibold"> {NumFloor}</span>
+                </div>
               </div>
-              <div className="building-detail-screen-electricity1">
-                <span className="building-detail-screen-text020 textsm">Nước</span>
-                <img
-                  alt="Done4151"
-                  src="/playground_assets/done4151-39nr.svg"
-                  className="building-detail-screen-done1"
-                />
+            </div>
+            <div className="item-area">
+              <div className="big-row">
+                <div className="col-third-right">
+                  <span className="form-subtitle textlgsemibold">Địa chỉ:</span>
+                </div>
+                <div className="col-third-left">
+                  <span className="form-subtitle textlgsemibold">
+                    Số {Num}, Đường {Street}, {WardName}, {DistrictName}, {ProvinceName}, 
+                  </span>
+                </div>
               </div>
-              <div className="building-detail-screen-electricity2">
-                <span className="building-detail-screen-text022 textsm">Wifi</span>
-                <img
-                  alt="Done4152"
-                  src="/playground_assets/done4152-0yeo.svg"
-                  className="building-detail-screen-done2"
-                />
-              </div>
-              <div className="building-detail-screen-electricity3">
-                <span className="building-detail-screen-text024 textsm">Điện</span>
-                <img
-                  alt="Done4152"
-                  src="/playground_assets/done4152-j13.svg"
-                  className="building-detail-screen-done3"
-                />
+            </div>
+            <div className="item-area">
+              <div className="big-row">
+                <div className="col-third-right">
+                  <span className="form-subtitle textlgsemibold">Dịch vụ:</span>
+                </div>
+                <div className="col-third-left">
+                  <span className="form-subtitle textlgsemibold">5</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <button className="building-detail-screen-small-secondary-button">
-          <span className="building-detail-screen-text026 textsmsemibold">Thêm toà nhà</span>
-        </button>
-        <div className="building-detail-screen-imagedefault">
-          <img
-            alt="Rectangle24153"
-            src="/playground_assets/rectangle24153-slom-500h.png"
-            className="building-detail-screen-rectangle2"
-          />
-          <img
-            alt="apartmentphoto114153"
-            src="/playground_assets/apartmentphoto114153-ag8d-500h.png"
-            className="building-detail-screen-apartmentphoto11"
-          />
-          <div className="building-detail-screen-nextbutton">
-            <img
-              alt="Ellipse24153"
-              src="/playground_assets/ellipse24153-ezm-200h.png"
-              className="building-detail-screen-ellipse2"
-            />
-            <img
-              alt="Keyboardarrowright4153"
-              src="/playground_assets/keyboardarrowright4153-drr.svg"
-              className="building-detail-screen-keyboardarrowright"
-            />
-          </div>
+        <div className="item-area" style={{top: "30px", position:"relative"}}>
+          <div className="form-subtitle textlgsemibold"  >Mô tả</div>
+          <span className="form-subtitle textlgsemibold">{Description}
+          </span>
         </div>
+        <div className="item-area" style={{top: "30px", position:"relative"}}>
+          <div className="form-subtitle textlgsemibold" >Các căn hộ thuộc toà nhà</div>
+          <div className="table-area">
+            <table>
+              <tr className="rowtitle">
+                {colname.map((a)=><th className="textsm" style={{width: a.width}}>{a.title}</th>)}
+              </tr>
+              {apartments.map(({id, attributes}) => 
+              <tr>
+                <td className="textsm">{id}</td>
+                <td className="textsm">{attributes.ApartmentName}</td>
+                <td className="textsm">{attributes.Livingroom + attributes.Bedroom + attributes.Kitchen + attributes.Restroom}</td>
+                <td className="textsm">{attributes.Size}m<sup>2</sup></td>
+                <td className="textsm"></td>
+                <td className="textsm"><Link to='/ApartmentDetail'>Xem chi tiết</Link></td>
+              </tr>)}
+            </table>
+          </div>
+          <span className="building-detail-screen-text101">Xem toàn bộ</span>
+        </div>
+ 
       </div>
-      <div className="building-detail-screen-description">
-        <span className="building-detail-screen-text028 textmdsemibold">Mô tả</span>
-        <span className="building-detail-screen-text030 textsm">
-            Hãy thắp sáng cuộc sống của bạn với căn hộ sáng bóng và đáng mơ
-            ước này. Được trang trí chuyên nghiệp trong phòng khách và phòng
-            ngủ sẽ mang lại cảm giác tráng lệ cho khách thuê.
-        </span>
-      </div>
-      <div className="building-detail-screen-description1">
-        <span className="building-detail-screen-text032 textmdsemibold">Các căn hộ thuộc toà nhà</span>
-        <div className="building-detail-screen-table">
-          {ApartmentListOf()}
-        <span className="building-detail-screen-text101">Xem toàn bộ</span>
-      </div>
-    </div>
     </div>
   )
 }
