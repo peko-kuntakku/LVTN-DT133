@@ -1,16 +1,10 @@
 import React,{ useEffect, useState } from 'react';
 import {Routes, Route, useNavigate} from 'react-router-dom'
 import '../style/form.css'
-import {checkbox,input,dropdown} from "../style/JSfunc";
+import {checkbox,input,dropdown,submitbtn,textarea} from "../style/JSfunc";
 import BuildingList from "./BuildingList";
-import {loadList, loadItem, addNewItem, updateItem, backend} from '../control';
-
-let budget = [
-  {value: "electric", text: "Điện"},
-  {value: "wifi", text: "wifi"},
-  {value: "water", text: "Nước"},
-  {value: "park", text: "Giữ xe"}
-]
+import {loadItem, addNewItem, updateItem} from '../control';
+import axios from 'axios';
 
 let buildingID = 0;
 
@@ -21,107 +15,133 @@ export const setBuildingID = (id) =>
 
 function Main (){
   const [building, loadBuilding]= useState();
+
+  const [BuildingName, setBuildingName] = useState();
+  const [NumFloor,setNumFloor] = useState();
+  const [Description,setDescription] = useState();
+  const [Province, setProvince]= useState('');
+  const [District, setDistrict]= useState('');
+  const [Ward, setWard]= useState('');
+  const [Num, setNum]= useState();
+  const [Street, setStreet]= useState();
+  
+  const [services,loadServices] = useState([]);
   const [provinces, loadProvince]= useState([]);
-  const [province, setProvince]= useState("");
-  const [provincename, setProvinceName]= useState("");
   const [districts, loadDistrict]= useState([]);
-  const [district, setDistrict]= useState("");
-  const [districtname, setDistrictName]= useState("");
   const [wards, loadWard]= useState([]);
-  const [ward, setWard]= useState("");
-  const [wardname, setWardName]= useState("");
+
   const [locations, setLocations]= useState([]);
   const [f2, setF2]= useState(true);
   const [f3, setF3]= useState(true);
 
   useEffect( ()=>{
-    loadItem('buildings', buildingID, loadBuilding);
+    loadItem('buildings', buildingID, loadBuilding,'location');
   },[buildingID]);
 
-  const Building_Name = (building!=null) ? building.attributes.Building_Name : null
-  const NumFloor = (building!=null) ? building.attributes.Num_of_Floors : null
-  const Description = (building!=null) ? building.attributes.Description : null
+  useEffect(() => {
+    loadItem('services','',loadServices)},[])
 
-  //Lấy danh sách tỉnh thành
+  useEffect( ()=>{
+    if (building!=null) {
+      const attr=building.attributes
+      setBuildingName(attr.BuildingName)
+      setNumFloor(attr.Num_of_Floors)
+      setDescription(attr.Description)
+      setProvince(attr.location.data.attributes.Province)
+      setDistrict(attr.location.data.attributes.District)
+      setWard(attr.location.data.attributes.Ward)
+      setNum(attr.location.data.attributes.Num)
+      setStreet(attr.location.data.attributes.Street)
+      setF2(false)
+      setF3(false)
+    }
+  },[building]);
+
   useEffect( ()=>{
     const foo= async ()=>{
-      const a= await fetch("https://provinces.open-api.vn/api/");
-      const b= await a.json();
-      loadProvince(await b);
+      const a= await (await fetch("https://provinces.open-api.vn/api/p")).json();
+      loadProvince(await a);
     }
     foo();
   },[]);
-  
-  //Lưu tên tỉnh thành
+
   const handleProvice=(event)=>{
-    setDistrict("")
-    setWard("")
-    setProvinceName(event.target.options[event.target.selectedIndex].text)
+    setDistrict('')
+    setWard('')
     setProvince(event.target.value);
     setF2(false);
     setF3(true);
     event.preventDefault();
   }
 
-  //Lấy danh sách quận huyện
   useEffect( ()=>{
     const foo= async ()=>{
-      if (province!=null)
+      if (Province!=null)
       {
-        const a= await fetch(`https://provinces.open-api.vn/api/p/${province}?depth=2`);
-        const b= await a.json();
-        loadDistrict(await b.districts);
+        const a= await (await fetch(`https://provinces.open-api.vn/api/p/${Province}?depth=2`)).json();
+        loadDistrict(await a.districts);
       }
       else return
     }
     foo();
-  },[province]);
-
+  },[Province]);
+  
   //Lưu tên quận, huyện
   const handleDistrict=(event)=>{
-    setDistrictName(event.target.options[event.target.selectedIndex].text)
     setDistrict(event.target.value);
     setF3(false);
-    setWard("")
+    setWard('')
     event.preventDefault();
   }
 
-  //Lấy danh sách phường, xã
   useEffect( ()=>{
     const foo= async ()=>{
-      const a= await fetch(`https://provinces.open-api.vn/api/d/${district}?depth=2`);
-      const b= await a.json();
-      loadWard(await b.wards);
+      if (District!=null)
+      {
+        const a= await (await fetch(`https://provinces.open-api.vn/api/d/${District}?depth=2`)).json();
+        loadWard(await a.wards);
+      }
     }
     foo();
-  },[district]);
+  },[District])
 
   //Lưu tên phường, xã
   const handleWard=(event)=>{
-    setWardName(event.target.options[event.target.selectedIndex].text)
     setWard(event.target.value);
     event.preventDefault();
   }
-  useEffect(() => loadList('locations',setLocations) , [])
+
+  //Tải danh sách location để lấy location mới thêm gần nhất
+  useEffect(()=>{loadItem('locations','',setLocations)},[])
   const navigate = useNavigate();
   const handleClick = (event) => {
     event.preventDefault();
+    let servicetemp = document.getElementsByName("services")
+    let servicelist = Array()
+    for (const i of servicetemp)
+    {
+      if (i.checked) servicelist.push(Number(i.value))
+    }
     const address = {
       "data": {
-          "Province": provincename,
-          "District": districtname,
-          "Ward": wardname,
-          "Num": 10
+          "Province": Province,
+          "District": District,
+          "Ward": Ward,
+          "Num": Num,
+          "Street": Street
       }
     }
-    if (buildingID==0) addNewItem('locations', address);
-    let {Building_Name, NumFloor, Description} = document.forms[0];
+    if (buildingID==0) addNewItem('locations', address)
+    else updateItem('locations', buildingID, address)
+    navigate('/Building/BuildingList');
+    const curLocation = (buildingID==0)? locations.at(-1).id : buildingID
     const building = {
       "data": {
-        "Building_Name": Building_Name.value,
-        "Num_of_Floors": NumFloor.value,
-        "Description": Description.value,
-        "location": locations.at(-1).id
+        "BuildingName": BuildingName,
+        "Num_of_Floors": NumFloor,
+        "Description": Description,
+        "services": servicelist,
+        "location": curLocation
       }
     }
     if (buildingID==0) addNewItem('buildings', building)
@@ -135,54 +155,48 @@ function Main (){
         <div className="big-row">
           <div className="col-left">
             <div className="item-area">
-              {input(1,"Tên toà nhà","Building_Name",true,"Nhập tên",Building_Name, null, 1, 60, "",)}
+              {input(7,"Tên toà nhà","Building_Name",true,"Nhập tên",BuildingName, setBuildingName, 1, 60)}
             </div>
             <div className="item-area double-col">
-              {input(0,"Số tầng","NumFloor",true,"Nhập số tầng",NumFloor, null, 1, 70, 1)}<div/>
+              {input(0,"Số tầng","NumFloor",true,"Nhập số tầng",NumFloor, setNumFloor, 1, 70, 1)}<div/>
             </div>
             <div className="item-area">
               <span className="form-subtitle textmdsemibold">Dịch vụ</span>
               <div className="checkbox-area">
-                {budget.map((x) => checkbox("budget",x.value,x.text))}
+                {services.map((x) => checkbox("services",x.id,x.attributes.ServiceName))}
               </div>
             </div>
-            <div className="item-area">
-              <span className="form-subtitle textmdsemibold">Mô tả</span>
-              <textarea name="Description" className="text-input" placeholder="Mô tả"></textarea>
-            </div>
+            <div className="item-area">{textarea (Description, setDescription)}</div>
           </div>
           <div className="col-left">
             <div className="item-area double-col">
               {dropdown(1,"Tỉnh, thành","province",true,provinces,'',
-              province,handleProvice,false,"Chọn tỉnh, thành","Không có dữ liệu")}
-              <div/>
+              Province,handleProvice,false,"Chọn tỉnh, thành","Không có dữ liệu")}
+              {dropdown(1, "Quận, huyện", "district", true, districts, "",
+              District, handleDistrict, f2, "Chọn quận, huyện", "Vui lòng chọn tỉnh, thành")}
             </div>
             <div className="item-area double-col">
-              {dropdown(1, "Quận, huyện", "district", true, districts, "",
-              district, handleDistrict, f2, "Chọn quận, huyện", "Vui lòng chọn tỉnh, thành")}
               {dropdown(1, "Phường, xã", "ward", true, wards, "", 
-              ward, handleWard, f3, "Chọn phường, xã", "Vui lòng chọn quận, huyện")}
+              Ward, handleWard, f3, "Chọn phường, xã", "Vui lòng chọn quận, huyện")}
+              {input(1,"Số nhà","Num",true,"Nhập số nhà",Num, setNum, 1, 18, 
+              "([a-zA-z]{0,2}[0-9]+(([a-zA-z]{0,2}[0-9]{0,2})|(BIS|bis)))(/[0-9]+[a-zA-z]{0,2}){0,7}(/[0-9]+(([a-zA-z]{0,2}[0-9]{0,2})|(BIS|bis)))?")}
             </div>
             <div className="item-area">
-              {input(1,"Số, đường","num_street",true,"Tên",null, null, 1, 70, 1)}
+              {input(7,"Đường","Street",true,"Tên",Street, setStreet, 1, 35, null)}
             </div>
             <div className="item-area">
               <span className="form-subtitle textmdsemibold">Thêm ảnh</span>
-                <input type="file" name="myfile" id="myfile" hidden/>
-                <label for="myfile" className="add-file-button">Nhấn để thêm ảnh</label>
+              <input type="file" name="myfile" id="myfile" hidden/>
+              <label for="myfile" className="add-file-button">Nhấn để thêm ảnh</label>
             </div>
           </div>
         </div>
-        <div className="submit-area">
-        <button type="submit" className="submit-button">
-          <span className="submit-btntxt textsmsemibold">Thêm căn hộ</span>
-        </button>
-        </div>
+        {submitbtn (buildingID, "tòa nhà")}
       </form>
     </div>
   )
   return (
-    <div>{form}</div>
+    <>{form}</>
   )
 }
 
