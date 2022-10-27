@@ -1,28 +1,30 @@
-import axios from 'axios';
 import React,{ useEffect, useState } from 'react';
 import {Routes, Route, Link, useNavigate} from 'react-router-dom';
-import ApartmentForm from "./ApartmentForm";
-import ApartmentDetail from "./ApartmentDetail";
-import { loadList, deleteItem } from '../control';
-import { setApartmentID } from './ApartmentForm';
+import ApartmentDetail, { setApartmentID2 } from './ApartmentDetail';
+import { loadItem, deleteItem } from '../control';
+import ApartmentForm, { setApartmentID } from './ApartmentForm';
 import '../style/main.css';
 import '../style/list.css';
 
 const colname = 
 [
-  {width: "12%", title: "Mã căn hộ"},
-  {width: "12%", title: "Tên căn hộ"},
+  {width: "14%", title: "Mã căn hộ"},
+  {width: "14%", title: "Tên căn hộ"},
   {width: "12%", title: "Số phòng"},
   {width: "12%", title: "Diện tích"},
-  {width: "22%", title: "Địa chỉ"},
+  {width: "18%", title: "Trạng thái"},
   {width: "12%", title: "Chi tiết"},
   {width: "12%", title: "Cập nhật / Xoá"}
 ]
 
 function Main () {
-  const [apartments, setApartments] = useState([]);
-  useEffect(() => {loadList('apartments',setApartments)}, [])
   const navigate = useNavigate();
+  const [apartments, loadApartments] = useState([]);
+  useEffect(() => {loadItem('apartments','',loadApartments)}, [])
+  const handleDetail = (id) => {
+    setApartmentID2(id)
+    navigate('/Apartment/ApartmentDetail');
+  };
   const handleEdit = (id) => {
     setApartmentID(id)
     navigate('/Apartment/ApartmentForm');
@@ -63,11 +65,11 @@ function Main () {
           {apartments.map(({id, attributes}) => 
           <tr>
             <td className="textsm">{id}</td>
-            <td className="textsm">{attributes.Apartment_Name}</td>
+            <td className="textsm">{attributes.ApartmentName}</td>
             <td className="textsm">{attributes.Livingroom + attributes.Bedroom + attributes.Kitchen + attributes.Restroom}</td>
-            <td className="textsm">{console.log(attributes.building)}</td>
-            <td className="textsm">{}</td>
-            <td className="textsm"><Link to='/ApartmentDetail'>Xem chi tiết</Link></td>
+            <td className="textsm">{attributes.Size}m<sup>2</sup></td>
+            <td className="textsm"></td>
+            <td className="textsm"><span onClick={()=>handleDetail(id)}>Xem chi tiết</span></td>
             <td className="textsm"><img alt="edit4140" src="/icon/edit-icon.svg" className="edit-icon" onClick={()=>handleEdit(id)}/>
               <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" onClick={()=>deleteItem('apartments', id)}/>
             </td>
@@ -82,10 +84,12 @@ function Main () {
 export default function ApartmentList ()
 {
   return(
+    <div>
     <Routes>
       <Route path="/" element={<Main />} />
       <Route path="/Apartment/ApartmentForm" element={<ApartmentForm />} />
       <Route path="/Apartment/ApartmentDetail" element={<ApartmentDetail />} />
     </Routes>
+    </div>
   )
 }
