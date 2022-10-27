@@ -1,6 +1,16 @@
 .building-detail-screen-container {
     min-height: 100vh;
   }
+
+.building-name {
+  color: rgb(0, 13, 255);
+  font-size: 26px;
+  font-style: normal;
+  font-family: Inter;
+  font-weight: 840px;
+  font-stretch: normal;
+}
+
   .building-detail-screen-building-detail-screen {
     width: 100%;
     height: 1400px;
@@ -72,10 +82,7 @@
     flex-shrink: 1;
     border-color: transparent;
     border-style: none;
-    border-width: 0;
-    margin-right: 0;
-    border-radius: 0px 0px 0px 0px;
-    margin-bottom: 0;
+
     flex-direction: row;
     justify-content: flex-start;
     background-color: transparent;
@@ -83,8 +90,6 @@
   .building-detail-screen-name {
     top: 0px;
     left: 0px;
-    width: 93px;
-    height: 31px;
     display: flex;
     padding: 0;
     position: absolute;
@@ -92,17 +97,10 @@
     box-sizing: border-box;
     align-items: flex-start;
     flex-shrink: 1;
-    border-color: transparent;
-    border-style: none;
-    border-width: 0;
-    border-radius: 0px 0px 0px 0px;
-    flex-direction: row;
     justify-content: flex-start;
-    background-color: transparent;
   }
   .building-detail-screen-text002 {
     color: var(--dl-color-default-primary);
-    height: auto;
     position: absolute;
     align-self: auto;
     text-align: left;
@@ -111,7 +109,6 @@
   .building-detail-screen-name1 {
     top: 63px;
     left: 0px;
-    width: 147px;
     height: 25px;
     display: flex;
     padding: 0;
@@ -459,9 +456,8 @@
   .building-detail-screen-apartmentphoto11 {
     top: 0px;
     left: 0px;
-    width: 505px;
-    height: 411px;
-    position: absolute;
+    width: 90%;
+    position: relative;
     box-sizing: border-box;
     border-color: transparent;
     margin-right: 0;
