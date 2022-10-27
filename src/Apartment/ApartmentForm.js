@@ -2,8 +2,8 @@ import React,{ useEffect, useState } from 'react';
 import {Routes, Route, Link, useNavigate} from 'react-router-dom'
 import ApartmentList from "./ApartmentList"
 import '../style/form.css'
-import {input,dropdown} from "../style/JSfunc";
-import {loadList, loadItem, addNewItem, updateItem, backend} from '../control';
+import {input,dropdown,textarea,submitbtn} from "../style/JSfunc";
+import {loadItem, addNewItem, updateItem} from '../control';
 
 let apartmentID = 0;
 
@@ -13,28 +13,34 @@ export const setApartmentID = (id) =>
 }
 
 function Main () {
-  const [apartment, loadApartment]= useState();
-  const [buildings, loadBuilding]= useState([]);
-  const [properties, loadProperties]= useState([]);
-  const [maxfloor, setFloor]= useState();
-  const [buildingname, setbuildingname]= useState();
-  const [f1, setF1]= useState(true);
-  const [numFloor, setNumFloor]= useState();
+  const navigate = useNavigate();
+  const [apartment, loadApartment] = useState();
+
+  const [ApartmentName,setApartmentName]= useState();
+  const [Size,setSize]= useState();
+  const [Capacity,setCapacity]= useState();
+  const [RentFee,setRentFee]= useState();
+  const [Description,setDescription]= useState();
   const [Livingroom, setLivingroom] = useState();
   const [Kitchen, setKitchen] = useState();
   const [Bedroom, setBedroom] = useState();
   const [Restroom, setRestroom] = useState();
-  const navigate = useNavigate();
+  const [Property1, setProperty1] = useState();
+  const [Property2, setProperty2] = useState();
+  const [Property3, setProperty3] = useState();
+  const [building, setBuilding]= useState();
+  const [Floor, setFloor]= useState();
+
+  const [buildings, loadBuilding]= useState([]);
+  const [properties, loadProperties]= useState([]);
+  const [buildingProp, loadBuildingProp] = useState();
+
+  const [f1, setF1]= useState(true);
 
   useEffect( ()=>{
-    loadItem('apartments', apartmentID, loadApartment);
+    loadItem('apartments', apartmentID, loadApartment,'building');
   },[apartmentID]);
 
-  const Apartment_Name = (apartment!=null) ? apartment.attributes.Apartment_Name : null
-  const Size = (apartment!=null) ? apartment.attributes.Size : null
-  const Capacity = (apartment!=null) ? apartment.attributes.Capacity : null
-  const Rent_Fee = (apartment!=null) ? apartment.attributes.Rent_Fee : null
-  const Description = (apartment!=null) ? apartment.attributes.Description : null
 
   let room = 
   [
@@ -45,56 +51,69 @@ function Main () {
   ]
 
   useEffect(()=>{
-    if (apartment!=null) room.map(x=>x.setVal(apartment.attributes[x.name]))
-    else room.map(x=>x.setVal(0))
-  });
+    if (apartment!=null) {
+      const attr=apartment.attributes
+      setApartmentName(attr.ApartmentName)
+      setSize(attr.Size)
+      setCapacity(attr.Capacity)
+      setRentFee(attr.RentFee)
+      setDescription(attr.Description)
+      setBuilding(attr.building.data.id)
+      setFloor(attr.Floor)
+      setF1(false)
+      room.map(x=>x.setVal(attr[x.name]))
+    }
+  },[apartment]);
 
-  useEffect(() => {loadList('buildings',loadBuilding)
-    loadList('properties',loadProperties)} , [])
+  useEffect(() => {loadItem('buildings','',loadBuilding)
+    loadItem('properties','',loadProperties)} , [])
   
   const handleBuildingName = (event) =>
   {
-    setbuildingname(event.target.value);
-    setNumFloor("");
+    setBuilding(event.target.value);
+    setFloor("");
     setF1(false);
     event.preventDefault();
   }
+
+  //Tạo danh sách số tầng từ tòa nhà đã chọn
   useEffect( ()=>{
-    const loadFloors= async ()=>{
-      if (buildingname!=null)
-      {
-        const a= await fetch(`${backend}/buildings/${buildingname}`);
-        const b= await a.json();
-        setFloor(await b.data);
-      }
-      else return
-    }
-    loadFloors();
-  },[buildingname]);
-  const floors = ((maxfloor!=null) ? Array.from({length: maxfloor.attributes.Num_of_Floors}, (_, i) => i + 1) :null);
+    loadItem('buildings',building,loadBuildingProp)
+  },[building]);
+  const floors = ((buildingProp!=null) ? Array.from({length: buildingProp.attributes.Num_of_Floors}, (_, i) => i + 1) :null);
 
   const handleFloor = (event) =>
   {
-    setNumFloor(event.target.value);
+    setFloor(event.target.value);
     event.preventDefault();
+  }
+
+  const Total = (arr) =>
+  {
+    let total=0
+    const newArr = arr.map(({value})=>value)
+    for (const i of newArr)
+    {
+      if (i!=null) total=total+i
+    }
+    return total
   }
 
   const handleClick = (event) => {
     event.preventDefault();
-    let {Apartment_Name, Size, Capacity, Rent_Fee, Description} = document.forms[0];
     const data = {
       'data': {
-          "Apartment_Name": Apartment_Name.value,
-          "Size": Number(Size.value),
-          "Capacity": Number(Capacity.value),
-          "Rent_Fee": Rent_Fee.value,
-          "building": buildingname,
-          "Floor": Number(numFloor),
+          "ApartmentName": ApartmentName,
+          "Size": Size,
+          "Capacity": Capacity,
+          "RentFee": RentFee,
+          "building": building,
+          "Floor": Floor,
           "Livingroom": Livingroom,
           "Kitchen": Kitchen,
           "Bedroom": Bedroom,
           "Restroom": Restroom,
-          "Description": Description.value,
+          "Description": Description,
           "isSingle": true
       }
     }
@@ -109,34 +128,34 @@ function Main () {
         <div className="big-row">
           <div className="col-left">
             <div className="item-area">
-              {input(1,"Tên căn hộ","Apartment_Name",true,"Tên",Apartment_Name,null,1,60,"",)}
+              {input(1,"Tên căn hộ","ApartmentName",true,"Tên",ApartmentName,setApartmentName,1,60,null)}
             </div>
             <div className="item-area double-col">
-              {input(0,"Diện tích","Size",true,"Đơn vị: m2",Size, null, 1, 1000, 0.5)}
-              {input(0,"Sức chứa","Capacity",true,"Nhập số người",Capacity, null, 1, 20, 1)}
+              {input(0,"Diện tích","Size",true,"Đơn vị: m2",Size, setSize, 1, 1000, 0.5)}
+              {input(0,"Sức chứa","Capacity",true,"Nhập số người",Capacity, setCapacity, 1, 20, 1)}
             </div>
             <div className="item-area double-col">
-              {input(0,"Tiền thuê","Rent_Fee",true,"Nhập số tiền",Rent_Fee, null, 10000, "", 500)}
+              {input(0,"Tiền thuê","RentFee",true,"Nhập số tiền",RentFee, setRentFee, 10000, "", 500)}
               <div/>
             </div>
             <div className="item-area double-col">
-              {dropdown(0,"Toà nhà","building_name",true, buildings, "Building_Name",
-              buildingname,handleBuildingName,false,"Chọn tòa nhà","Chọn tòa nhà")}
+              {dropdown(0,"Toà nhà","building",true, buildings, "BuildingName",
+              building,handleBuildingName,false,"Chọn tòa nhà","Chọn tòa nhà")}
               {dropdown(2,"Tầng","Floor", true, floors, "",
-              numFloor,handleFloor,f1,"Chọn số tầng","Vui lòng chọn tòa nhà")}
+              Floor,handleFloor,f1,"Chọn số tầng","Vui lòng chọn tòa nhà")}
             </div>
-            <div className="item-area">
-              <span className="form-subtitle textmdsemibold">Mô tả</span>
-              <textarea name="Description" className="text-input" placeholder="Mô tả" defaultValue={Description}></textarea>
-            </div>
+            <div className="item-area">{textarea (Description, setDescription)}</div>
           </div>
           <div className="col-left">
             <div className="item-area">
               <span className="form-subtitle textmdsemibold">Phòng (nhập số lượng)</span>
-              {/* <span className="form-subtitle textmdsemibold" 
-              style={{algin: "right", float:"right", right: "40px", position: "relative"}}>
-                Tổng: {Livingroom + Kitchen + Bedroom + Restroom}</span> */}
-              <div className="double-col">{room.map((x) => input(0,'',x.name,false,x.text,x.value,x.setVal,0,5,1))}</div>
+              <span className="form-subtitle textmdsemibold" 
+                style={{algin: "right", float:"right", right: "40px", position: "relative"}}>
+                Tổng: {Total(room)}
+              </span>
+              <div className="double-col">
+                {room.map((x) => input(0,'',x.name,false,x.text,x.value,x.setVal,0,5,1))}
+              </div>
             </div>
             <div className="item-area">
               <span className="form-subtitle textmdsemibold">Nội thất (nhập số lượng)</span>
@@ -147,15 +166,11 @@ function Main () {
               <div className="add-file-area">
                 <input type="file" name="myfile" id="myfile" hidden/>
                 <label for="myfile" className="add-file-button">Nhấn để thêm ảnh</label>
-                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="submit-area">
-          <button type="submit" className="submit-button">
-            <span className="submit-btntxt textsmsemibold">{(apartmentID==0) ? "Thêm căn hộ" : "Cập nhật"}</span>
-          </button>
-        </div>
+        {submitbtn (apartmentID, "căn hộ")}
       </form>
     </>
   )
