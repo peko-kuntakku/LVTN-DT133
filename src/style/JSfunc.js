@@ -10,7 +10,7 @@ export const choice = (title, name, list, value, setVal) =>
       {list.map((x) => 
       <div className="checkbox-item">
         <input type="radio" className="choice-icon" name={name} value={x.code} id={x.code} 
-        defaultChecked={x.code==value} required/>
+        checked={x.code===value} onChange={(e)=>setVal(e.target.value)} required/>
         <label for id={x.code} className="checkbox-text textsm">{x.name}</label>
       </div>)}
     </div></>
@@ -71,11 +71,14 @@ export const input = (type, title, name, required, placeholder, result, setValue
   return(
     <><span className="form-subtitle textmdsemibold">{title}</span>
     <input
-      onInput = {(e) => {if (setValue!=null) {
-        if ((type==0)) setValue(Number(e.target.value)) 
-        else setValue(e.target.value)}}}
+      onInput = {(e) => {e.preventDefault()
+        if (setValue!=null) 
+        {
+          if (type==0&&e.target.value!='') setValue(Number(e.target.value))
+          else setValue(e.target.value)
+        }}}
       name={name}
-      type={(type==1) ? "text" : (type==2) ? "date" : (type==3) ? "time" : 
+      type={(type==1||type==7) ? "text" : (type==2) ? "date" : (type==3) ? "time" : 
       (type==4) ? "tel" : (type==5) ? "email" : (type==6) ? "password" : "number"}
       required={required}
       min={([0,2,3].includes(type)) ? min : null}
@@ -84,14 +87,34 @@ export const input = (type, title, name, required, placeholder, result, setValue
       maxLength={([1,5,6].includes(type)) ? max : null}
       step={([0,2,3].includes(type)) ? step : null}
       pattern={([1,4,5,6].includes(type)) ? step : null}
+      autoCapitalize={(type==7) ? "words" : "off"}
       placeholder={placeholder}
-      defaultValue={result}
+      value={result}
       className="form-input"
-      style={{width: (type==1) ? "95%" : "90%"}}  />
+      style={{width: ([1,5,6].includes(type)) ? "95%" : "90%"}}  />
     </>
   )
 }
 
+export function textarea (result, setValue)
+{
+  return(
+    <><span className="form-subtitle textmdsemibold">Mô tả</span>
+    <textarea name="Description" className="text-input" placeholder="Mô tả" defaultValue={result} 
+    onInput = {(e) => {e.preventDefault(); setValue(e.target.value)}}>
+    </textarea></>
+  )
+}
+export function submitbtn (Id, category)
+{
+  return(
+    <div className="submit-area">
+      <button type="submit" className="submit-button">
+        <span className="submit-btntxt textsmsemibold">{(Id==0) ? `Thêm ${category}` : "Cập nhật"}</span>
+      </button>
+    </div>
+  )
+}
 export function table (colname, tbcontent)
 {
   return (
