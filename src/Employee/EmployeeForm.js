@@ -1,134 +1,95 @@
-import { func } from "prop-types";
-import React, { useState } from "react";
+import axios from 'axios';
+import React,{ useEffect, useState } from 'react';
 import {Routes, Route, Link, useNavigate} from 'react-router-dom';
-import '../style/form.css';
-import {checkbox,input,dropdown,choice} from "../style/JSfunc";
-import EmployeeList from "./EmployeeList";
+import ReactDOM from "react-dom";
+import '../style/main.css';
+import '../style/list.css';
+import EmployeeForm from "./EmployeeForm";
+import {deleteItem, loadItem } from '../control';
+import { setEmployeeID } from './EmployeeForm';
 
-const roles = [
-    {value: 1, text: "Sửa chữa"},
-    {value: 2, text: "Vệ sinh"},
-    {value: 3, text: "Sửa chữa"}
-]
-const positions = [
-    {value: 1, text: "Sửa chữa"},
-    {value: 2, text: "Vệ sinh"},
-    {value: 3, text: "Sửa chữa"}
-]
-const workdays =
+const colname = 
 [
-    {value: 1, text: "Thứ hai"},
-    {value: 2, text: "Thứ ba"},
-    {value: 3, text: "Thứ tư"},
-    {value: 4, text: "Thứ năm"},
-    {value: 5, text: "Thứ sáu"},
-    {value: 6, text: "Thứ bảy"},
-    {value: 7, text: "Chủ nhật"}
+  {width: "10%", title: "Mã nhân viên"},
+  {width: "18%", title: "Họ lót"},
+  {width: "10%", title: "Tên"},
+  {width: "20%", title: "Email"},
+  {width: "16%", title: "Công việc"},
+  {width: "12%", title: "Chi tiết"},
+  {width: "14%", title: "Cập nhật / Xoá"}
 ]
-const genders = [
-  {value: "male", text: "Nam"},
-  {value: "female", text: "Nữ"},
-  {value: "other", text: "Khác"}
-]
-const shifts = [
-  {value: 1, text: "Ca 1"},
-  {value: 2, text: "Ca 2"},
-  {value: 3, text: "Ca 3"}
-]
-function Main (){
+
+function Main ()
+{
+  const [employees, setEmployees] = useState([]);
+  useEffect(() => {loadItem('employees','',setEmployees)}, [])
   const navigate = useNavigate();
-  const handleClick = (event) => {
+  const handleEdit = (id) => {
+    setEmployeeID(id)
+    navigate('/Employee/EmployeeForm');
+  };
+  const handleAdd = (event) =>
+  {
     event.preventDefault();
-    navigate('/Employee/EmployeeList');
+    setEmployeeID(0)
+    navigate('/Employee/EmployeeForm');
   }
   return(
     <div>
-      <span className="function-title textxlsemibold">Thêm nhân viên</span>
-      <form onSubmit={handleClick} className="main-zone">
-        <div className="big-row">
-          <div className="col-left">
-            <div className="item-area">
-              {input(2,"surname","Tên","Họ lót")}
-            </div>
+      <span class="function-title textxlsemibold">Nhân viên</span>
+      <div class="main-zone">
+        <div class="main-head">
+          <div class="search-list">
+            <input
+              type="text"
+              placeholder="Tìm kiếm"
+              className="searchbar"
+            />
+            <img
+              src="/icon/search-icon.svg"
+              className="search-icon"
+            /> 
           </div>
-          <div className="col-left">
-            <div className="item-area">
-              {input(2,"firstname","Tên","Tên")}
-            </div>
-          </div>
-        </div> 
-        <div className="big-row">
-          <div className="col-left">
-            <div className="item-area">
-              {input(2,"email","Email","Email")}
-            </div>
-          </div>
-          <div className="col-left">
-            <div className="item-area">
-              {input(2,"password","Mật khẩu đăng nhập lần đầu","Mật khẩu")}
-            </div>
-          </div>
-        </div> 
-        <div className="big-row">
-          <div className="col-left">
-            <div className="item-area">
-              {choice("Giới tính","gender",genders)}
-            </div>
-          </div>
-          <div className="col-left">
-            <div className="item-area double-col">
-              {input(3,"","","Ngày sinh")}<br/>
-            </div>
-          </div>
-        </div> 
-        <div className="big-row">
-          <div className="col-left">
-            <div className="item-area">
-              <span className="form-subtitle textmdsemibold">Công việc</span>
-              <div className="item-area double-col">
-                  {input(1,"salary","Lương", "Lương")}
-                <span className="add-employee-screen-text09 textmd">triệu đồng</span>
-              </div>
-              <div className="item-area double-col">
-                  {input(1,"welfare","Phúc lợi","Phúc lợi")}
-                <span className="add-employee-screen-text09 textmd">triệu đồng</span>
-              </div>
-              <div className="item-area double-col">
-                {dropdown("Chức vụ","role",roles)}
-                {dropdown("Vị trí","position",positions)}
-              </div>
-            </div>
-          </div>
-          <div className="col-left">
-          <span className="form-subtitle textmdsemibold">Thời gian làm việc</span>
-          <div className="item-area double-col">
-              {dropdown("Từ","work-start",workdays)}
-              {dropdown("Đến","work-end",workdays)}
-          </div>
-          <div className="item-area double-col">
-            {input(1,"offday","Ngày nghỉ","Ngày nghỉ tối đa")}<div/>
-          </div>
-          <div className="item-area">
-            {choice("Ca làm việc","shift",shifts)}
-          </div>
-          </div>
-        </div>
-        <div className="submit-area">
-          <button type="submit" className="submit-button">
-            <span className="submit-btntxt textsmsemibold">Thêm nhân viên</span>
+          <button class="addbutton" onClick={handleAdd}>
+            <span class="addbutton-text textsmsemibold">Thêm nhân viên</span>
+            <img
+              src="./icon/add-icon.svg"
+              class="pluscircle"
+            />
           </button>
         </div>
-      </form>
+        <div className="table-area">
+          <table>
+            <tr className="rowtitle">
+              {colname.map((a)=><th className="textsm" style={{width: a.width}}>{a.title}</th>)}
+            </tr>
+            {employees.map(({id, attributes}) => 
+            <tr>
+              <td className="textsm">{id}</td>
+              <td className="textsm">{attributes.Lastname}</td>
+              <td className="textsm">{attributes.Firstname}</td>
+              <td className="textsm">{attributes.Email}</td>
+              <td className="textsm">{attributes.Role}</td>
+              <td className="textsm"><Link to='/Apartment/ApartmentDetail'>Xem chi tiết</Link></td>
+              <td className="textsm"><img alt="edit4140" src="/icon/edit-icon.svg" className="edit-icon" onClick={()=>handleEdit(id)}/>
+                <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" onClick={()=>deleteItem('employees', id)}/>
+              </td>
+            </tr>)}
+          </table>
+        </div>
+      </div>
     </div>
   )
 }
 
-export default function EmployeeForm ()
+export default function EmployeeList ()
 {
   return(
+    <div>
     <Routes>
       <Route path="/" element={<Main />} />
-      <Route path="/Employee/EmployeeList" element={<EmployeeList />} />
+      <Route path="/Employee/EmployeeForm" element={<EmployeeForm />} />
     </Routes>
+    </div>
   )
 }
