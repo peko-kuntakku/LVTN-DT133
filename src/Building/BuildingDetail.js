@@ -1,6 +1,7 @@
 
 import {Routes, Route, Link, useNavigate} from 'react-router-dom';
 import React,{ useEffect, useState } from 'react';
+import { setApartmentID2 } from '../Apartment/ApartmentDetail';
 import { loadItem, loadLocation } from '../control';
 import './BuildingDetail.css'
 
@@ -21,7 +22,15 @@ const colname =
   {width: "12%", title: "Chi tiết"},
 ]
 
+const showService = (title) =>
+{
+  return(<div className="form-subtitle textlgsemibold">{title}</div>)
+  
+}
+
 function Main () {
+  const navigate = useNavigate();
+
   const [building, loadBuilding]= useState();
 
   const [BuildingName, setBuildingName] = useState();
@@ -36,12 +45,17 @@ function Main () {
   const [Num, setNum]= useState();
   const [Street, setStreet]= useState();
 
+  const [services,loadServices] = useState([]);
+
   const [apartments, loadApartments] = useState([]);
 
 
   useEffect(() => {
     loadItem('buildings', buildingID2, loadBuilding,'*');
   }, [buildingID2])
+
+  useEffect(() => {
+    loadItem('services','',loadServices)},[buildingID2])
 
   useEffect( ()=>{
     if (building!=null) {
@@ -59,12 +73,17 @@ function Main () {
   },[building]);
 
   useEffect( ()=>{
-    if (Province!=null) {
+    if (District!=null) {
       loadLocation('p',Province,setProvinceName)
       loadLocation('d',District,setDistrictName)
       loadLocation('w',Ward,setWardName)
     }
   },[District]);
+
+  const handleDetail = (id) => {
+    setApartmentID2(id)
+    navigate('/Apartment/ApartmentDetail');
+  };
 
   return (
     <div>
@@ -80,7 +99,7 @@ function Main () {
           </div>
           <div className="col-left">
             <div className="item-area">
-              <span className="form-subtitle textxlsemibold">Toà nhà {BuildingName}</span>
+              <span className="building-name">Toà nhà {BuildingName}</span>
             </div>
             <div className="item-area">
               <div className="big-row">
@@ -110,17 +129,23 @@ function Main () {
                   <span className="form-subtitle textlgsemibold">Dịch vụ:</span>
                 </div>
                 <div className="col-third-left">
-                  <span className="form-subtitle textlgsemibold">5</span>
+                  <div className="item-area double-col">
+                  {services.map((x) => showService(x.attributes.ServiceName))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="item-area" style={{top: "30px", position:"relative"}}>
+      </div>  
+      <div className="item-area" style={{top: "30px", position:"relative"}}/>
+      <div className="main-zone2">
           <div className="form-subtitle textlgsemibold"  >Mô tả</div>
           <span className="form-subtitle textlgsemibold">{Description}
           </span>
-        </div>
+      </div>
+      <div className="item-area" style={{top: "30px", position:"relative"}}/>
+      <div className="main-zone2">
         <div className="item-area" style={{top: "30px", position:"relative"}}>
           <div className="form-subtitle textlgsemibold" >Các căn hộ thuộc toà nhà</div>
           <div className="table-area">
@@ -135,7 +160,7 @@ function Main () {
                 <td className="textsm">{attributes.Livingroom + attributes.Bedroom + attributes.Kitchen + attributes.Restroom}</td>
                 <td className="textsm">{attributes.Size}m<sup>2</sup></td>
                 <td className="textsm"></td>
-                <td className="textsm"><Link to='/ApartmentDetail'>Xem chi tiết</Link></td>
+                <td className="textsm"><span onClick={()=>handleDetail(id)}>Xem chi tiết</span></td>
               </tr>)}
             </table>
           </div>
