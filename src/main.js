@@ -15,6 +15,7 @@ import ApartmentForm from './Apartment/ApartmentForm';
 import VoucherForm from './Voucher/VoucherForm';
 import EmployeeForm from "./Employee/EmployeeForm";
 import BuildingDetail from './Building/BuildingDetail';
+import ApartmentDetail from "./Apartment/ApartmentDetail";
 
 const num = [1,2,3,4,5,6,7,8,9]
 
@@ -216,6 +217,7 @@ function MainArea ()
     <Route path="/Employee/EmployeeForm" element={<EmployeeForm />}/>
     <Route path="/Attendance/QRCode" element={<QRCode />}/>
     <Route path="/Voucher/VoucherForm" element={<VoucherForm />}/>
+    <Route path="/Apartment/ApartmentDetail" element={<ApartmentDetail />}/>
   </Routes>
   )
 }
