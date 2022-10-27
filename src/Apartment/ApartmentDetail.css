@@ -1,6 +1,23 @@
 .building-detail-screen1-container {
     min-height: 100vh;
   }
+
+.number-room {
+  color: rgb(255, 200, 0);
+  font-size: 22px;
+  font-style: normal;
+  font-family: Inter;
+  font-weight: 840px;
+  font-stretch: normal;
+}
+.number-price {
+  color: rgb(0, 166, 255);
+  font-size: 26px;
+  font-style: normal;
+  font-family: Inter;
+  font-weight: 800px;
+  font-stretch: normal;
+}
   .building-detail-screen1-building-detail-screen {
     width: 100%;
     height: 2121px;
@@ -15,22 +32,7 @@
     border-radius: 0px 0px 0px 0px;
     background-color: var(--dl-color-default-bgcolor);
   }
-  .building-detail-screen1-main {
-    top: 102px;
-    left: 359px;
-    width: 1065px;
-    height: 1923px;
-    display: flex;
-    overflow: hidden;
-    position: absolute;
-    box-sizing: border-box;
-    align-items: flex-start;
-    flex-shrink: 0;
-    border-color: transparent;
-    margin-right: 0;
-    border-radius: 0px 0px 0px 0px;
-    margin-bottom: 0;
-  }
+
   .building-detail-screen1-text {
     color: var(--dl-color-default-normaltext);
     height: auto;
