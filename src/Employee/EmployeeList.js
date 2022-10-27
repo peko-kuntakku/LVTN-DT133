@@ -1,11 +1,12 @@
-import { func } from "prop-types";
-import React, { useState } from "react";
+import axios from 'axios';
+import React,{ useEffect, useState } from 'react';
 import {Routes, Route, Link, useNavigate} from 'react-router-dom';
 import ReactDOM from "react-dom";
 import '../style/main.css';
 import '../style/list.css';
 import EmployeeForm from "./EmployeeForm";
-import { table } from "../style/JSfunc";
+import {deleteItem, loadItem } from '../control';
+import { setEmployeeID } from './EmployeeForm';
 
 const colname = 
 [
@@ -17,40 +18,20 @@ const colname =
   {width: "12%", title: "Chi tiết"},
   {width: "14%", title: "Cập nhật / Xoá"}
 ]
-const tbcontent = [
-[
-  "CUS_001",
-  "Nguyễn Văn",
-  "A",
-  "nguyena@gmail.com<",
-  "Sửa chữa",
-  <Link to='/BuildingDetail'>Xem chi tiết</Link>,
-  <><img alt="edit4140" src="/icon/edit-icon.svg" className="edit-icon" />
-  <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" /></>
-],
-[
-  "CUS_001",
-  "Nguyễn Văn",
-  "A",
-  "nguyena@gmail.com<",
-  "Sửa chữa",
-  <Link to='/BuildingDetail'>Xem chi tiết</Link>,
-  <><img alt="edit4140" src="/icon/edit-icon.svg" className="edit-icon" />
-  <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" /></>
-]]
 
 function Main ()
 {
-  // const [employees, setBuilding] = useState([]);
-  // useEffect(() => {
-  //   fetch('http://localhost:1337/api/employees')
-  //     .then((response) => response.json())
-  //     .then(({ data }) => setBuilding(data)); // <-- save the data array
-  // }, []);
+  const [employees, setEmployees] = useState([]);
+  useEffect(() => {loadItem('employees','',setEmployees)}, [])
   const navigate = useNavigate();
-  const handleClick = (event) =>
+  const handleEdit = (id) => {
+    setEmployeeID(id)
+    navigate('/Employee/EmployeeForm');
+  };
+  const handleAdd = (event) =>
   {
     event.preventDefault();
+    setEmployeeID(0)
     navigate('/Employee/EmployeeForm');
   }
   return(
@@ -58,27 +39,44 @@ function Main ()
       <span class="function-title textxlsemibold">Nhân viên</span>
       <div class="main-zone">
         <div class="main-head">
-          <div class="main-head-center">
-              <input
-                type="text"
-                placeholder="Tìm kiếm"
-                className="searchbar"
-              />
-              <img
-                alt="searchI414"
-                src="/icon/search-icon.svg"
-                className="search-icon"
-              /> 
-            <button class="addbutton" onClick={handleClick}>
-              <span class="addbutton-text textsmsemibold">Thêm nhân viên</span>
-              <img
-                src="./icon/add-icon.svg"
-                class="pluscircle"
-              />
-            </button>
+          <div class="search-list">
+            <input
+              type="text"
+              placeholder="Tìm kiếm"
+              className="searchbar"
+            />
+            <img
+              src="/icon/search-icon.svg"
+              className="search-icon"
+            /> 
           </div>
+          <button class="addbutton" onClick={handleAdd}>
+            <span class="addbutton-text textsmsemibold">Thêm nhân viên</span>
+            <img
+              src="./icon/add-icon.svg"
+              class="pluscircle"
+            />
+          </button>
         </div>
-        <div className="table-area">{table(colname, tbcontent)}</div>
+        <div className="table-area">
+          <table>
+            <tr className="rowtitle">
+              {colname.map((a)=><th className="textsm" style={{width: a.width}}>{a.title}</th>)}
+            </tr>
+            {employees.map(({id, attributes}) => 
+            <tr>
+              <td className="textsm">{id}</td>
+              <td className="textsm">{attributes.Lastname}</td>
+              <td className="textsm">{attributes.Firstname}</td>
+              <td className="textsm">{attributes.Email}</td>
+              <td className="textsm">{attributes.Role}</td>
+              <td className="textsm"><Link to='/Apartment/ApartmentDetail'>Xem chi tiết</Link></td>
+              <td className="textsm"><img alt="edit4140" src="/icon/edit-icon.svg" className="edit-icon" onClick={()=>handleEdit(id)}/>
+                <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" onClick={()=>deleteItem('employees', id)}/>
+              </td>
+            </tr>)}
+          </table>
+        </div>
       </div>
     </div>
   )
