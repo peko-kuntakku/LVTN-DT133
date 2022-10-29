@@ -28,7 +28,7 @@ const showService = (title) =>
   
 }
 
-function Main () {
+export default function BuildingDetail () {
   const navigate = useNavigate();
 
   const [building, loadBuilding]= useState();
@@ -168,17 +168,6 @@ function Main () {
         </div>
  
       </div>
-    </div>
-  )
-}
-
-export default function BuildingDetail ()
-{
-  return(
-    <div>
-    <Routes>
-      <Route path="/" element={<Main />} />
-    </Routes>
     </div>
   )
 }

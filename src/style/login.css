@@ -261,19 +261,16 @@
   text-align: center;
   line-height: 153.52272987365723%;
 }
-.signin-screen-line10 {
+.signin-screen-leftline {
   top: 11px;
   left: 0px;
-  width: 105px;
-  height: 0px;
   position: absolute;
   box-sizing: border-box;
 }
-.signin-screen-line11 {
+.signin-screen-rightline {
   top: 11px;
-  left: 156.00885009765625px;
-  width: 105px;
-  height: 0px;
+  float: right;
+  right: 0;
   position: absolute;
   box-sizing: border-box;
 }

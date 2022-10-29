@@ -30,6 +30,10 @@ function Main (){
     event.preventDefault();
     navigate('/Voucher/VoucherForm');
   }
+  const showDateTime = (str) =>
+  {
+    return str.slice(11,16) + ' ' + str.slice(8,10) + '/' + str.slice(5,7) + '/' + str.slice(0,4)
+  }
   return(
     <div>
       <span class="function-title textxlsemibold">Mã giảm giá</span>
@@ -62,8 +66,8 @@ function Main (){
             {vouchers.map(({id, attributes}) => 
             <tr>
               <td className="textsm">{attributes.Voucher_Name}</td>
-              <td className="textsm">{attributes.Start_at}</td>
-              <td className="textsm">{attributes.Expired_at}</td>
+              <td className="textsm">{showDateTime(attributes.Start_at)}</td>
+              <td className="textsm">{showDateTime(attributes.Expired_at)}</td>
               <td className="textsm">{attributes.Amount}</td>
               <td className="textsm">{attributes.Remained}</td>
               <td className="textsm"><Link to='/Building/BuildingDetail'>Xem chi tiết</Link></td>

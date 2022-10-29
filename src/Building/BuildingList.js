@@ -6,6 +6,7 @@ import BuildingDetail,{ setBuildingID2 } from "./BuildingDetail";
 import { deleteItem, loadItem, loadLocation } from '../control';
 import BuildingForm, { setBuildingID } from './BuildingForm';
 import axios from 'axios';
+import Popup from '../Popup';
 
 const colname = 
 [
@@ -17,20 +18,21 @@ const colname =
   {width: "14%", title: "Cập nhật / Xoá"}
 ]
 
-// function showLocate(p)
+// const showLocate = async (p) =>
 // {
-//   const [Province, setProvince]= useState('');
-//   const [District, setDistrict]= useState('');
-//   const [Ward, setWard]= useState('');
-//   loadLocation('p',p.Province,setProvince)
-//   loadLocation('d',p.District,setDistrict)
-//   loadLocation('w',p.Ward,setWard)
-//   return Province
+//   const x = await axios.get(`https://provinces.open-api.vn/api/p/${p.Province}`)
+//   return x
 // }
 
-function Main () {
-  const [buildings, setBuildings] = useState([]);
-  useEffect(() => {loadItem('buildings','',setBuildings,'location')}, [])
+export default function BuildingList () {
+  const [popup, setPopup] = useState(0);
+
+  const [itemID, setID] = useState();
+  const [itemName, setName] = useState();
+  const [itemFloor, setFloor] = useState();
+  const [buildings, loadBuildings] = useState([]);
+
+  useEffect(() => {loadItem('buildings','',loadBuildings,'*')}, [])
 
   const navigate = useNavigate();
   const handleDetail = (id) => {
@@ -46,6 +48,18 @@ function Main () {
     event.preventDefault();
     setBuildingID(0);
     navigate('/Building/BuildingForm');
+  }
+  const handleDelete = async (Id) =>
+  {
+    deleteItem('buildings', Id)
+    loadItem('buildings','',loadBuildings,'*')
+  }
+  const confirmDelete = (id,name,floor) => 
+  {
+    setPopup(1)
+    setID(id)
+    setName(name)
+    setFloor(floor)
   }
 
   return(
@@ -82,28 +96,25 @@ function Main () {
               <td className="textsm">{id}</td>
               <td className="textsm">{attributes.BuildingName}</td>
               <td className="textsm">{attributes.Num_of_Floors}</td>
-              <td className="textsm">{/*showLocate(attributes.location.data.attributes)*/}</td>
+              <td className="textsm">{/* showLocate(attributes.location.data.attributes) */}</td>
               <td className="textsm"><span onClick={()=>handleDetail(id)}>Xem chi tiết</span></td>
               <td className="textsm"><img alt="edit4140" src="/icon/edit-icon.svg" className="edit-icon" onClick={()=>handleEdit(id)}/>
-                <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" onClick={()=>deleteItem('buildings', id)}/>
+                <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" 
+                onClick={()=>confirmDelete(id, attributes.BuildingName, attributes.Num_of_Floors)}/>
               </td>
             </tr>)}
           </table>
         </div>
       </div>
+      <Popup trigger={popup} setTrigger={setPopup} setDelete={handleDelete} id={itemID} 
+      details={
+        [
+          {key: "Tên tòa nhà", value: itemName},
+          {key: "Số tầng", value: itemFloor},
+        ]
+      }
+      extendAlert="Thao tác này sẽ xóa tất cả các căn hộ liên kết với tòa nhà này!">
+      </Popup>
     </div>
   )
 }
-export default function BuildingList ()
-{
-  return(
-    <div>
-    <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/Building/BuildingForm" element={<BuildingForm />} />
-      <Route path="/Building/BuildingDetail" element={<BuildingDetail />} />
-    </Routes>
-    </div>
-  )
-}
-  

@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import './style/login.css';
 import Main from './main';
+import { deleteItem, loadItem, loadLocation } from './control';
+import axios from "axios";
 
 function LoginPage ()
 {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [users, setUsers] = useState()
+
+  const [Email,setEmail] = useState()
+  const [Password,setPassword] = useState()
+
+
+  useEffect(() => {loadItem('admins','',setUsers)},[])
 
   const database = [
     {
@@ -24,21 +34,40 @@ function LoginPage ()
     pass: "invalid password"
   };
 
-  const handleClick = (event) => {
+  const handleClick = async (event) => {
     event.preventDefault();
-    let {tên, upass} = document.forms[0];
-    
-    const userData = database.find((user) => user.username === tên.value);
-    if (userData) {
-      if (userData.password !== upass.value) {
-        setErrorMessages({ name: "pass", message: errors.pass });
-      } else {
-        setIsSubmitted(true);
-      }
-    } 
-    else {
-      setErrorMessages({ name: "uname", message: errors.uname });
+    let {uname, upass} = document.forms[0];
+    const res = await axios.get(
+      `http://localhost:1337/api/admins?email=${uname.value}`
+    );
+    if (res.data.length === 0) {
+      setErrorMessages({ name: "pass", message: errors.pass });
+    } else {
+      setIsSubmitted(true)
     }
+    // setIsSubmitted(true)
+    // for (let i=0; i<users.lenghth; i++)
+    // {
+    //   console.log(users[i].attributes)
+    //   // if (uname==i.attribute.Email) 
+    //   // {
+    //   //   if (uname==i.attribute.Password) setIsSubmitted(true);
+    //   //   else setErrorMessages({ name: "pass", message: errors.pass });
+    //   // }
+    // }
+
+        
+    // const userData = database.find((user) => user.username === uname.value);
+    // if (userData) {
+    //   if (userData.password !== upass.value) {
+    //     setErrorMessages({ name: "pass", message: errors.pass });
+    //   } else {
+    //     setIsSubmitted(true);
+    //   }
+    // } 
+    // else {
+    //   setErrorMessages({ name: "uname", message: errors.uname });
+    // }
 
   }
   
@@ -66,7 +95,7 @@ function LoginPage ()
                     type="email"
                     placeholder="Email"
                     className="signin-input"
-                    name="tên" required 
+                    name="uname" required 
                   />
                   {renderErrorMessage("uname")}
                 </div>

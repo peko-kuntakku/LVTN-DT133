@@ -3,6 +3,7 @@ import {Routes, Route, Link, useNavigate} from 'react-router-dom';
 import ApartmentDetail, { setApartmentID2 } from './ApartmentDetail';
 import { loadItem, deleteItem } from '../control';
 import ApartmentForm, { setApartmentID } from './ApartmentForm';
+import Popup from '../Popup';
 import '../style/main.css';
 import '../style/list.css';
 
@@ -17,10 +18,20 @@ const colname =
   {width: "12%", title: "Cập nhật / Xoá"}
 ]
 
-function Main () {
+export default function ApartmentList () {
+  const [popup, setPopup] = useState(0);
+  const [itemID, setID] = useState();
+  const [itemName, setName] = useState();
+  const [itemSize, setSize] = useState();
+  const [itemRoom, setRoom] = useState();
+
   const navigate = useNavigate();
+
   const [apartments, loadApartments] = useState([]);
   useEffect(() => {loadItem('apartments','',loadApartments)}, [])
+  const calcSum = (p) => {
+    return p.Livingroom + p.Bedroom + p.Kitchen + p.Restroom
+  }
   const handleDetail = (id) => {
     setApartmentID2(id)
     navigate('/Apartment/ApartmentDetail');
@@ -35,6 +46,20 @@ function Main () {
     setApartmentID(0)
     navigate('/Apartment/ApartmentForm');
   }
+  const handleDelete = async (Id) =>
+  {
+    deleteItem('apartments', Id)
+    loadItem('apartments','',loadApartments)
+  }
+  const confirmDelete = (id,name,size,room) => 
+  {
+    setPopup(1)
+    setID(id)
+    setName(name)
+    setSize(size)
+    setRoom(room)
+  }
+
   return(
     <><span class="function-title textxlsemibold">Căn hộ</span>
     <div class="main-zone">
@@ -66,30 +91,27 @@ function Main () {
           <tr>
             <td className="textsm">{id}</td>
             <td className="textsm">{attributes.ApartmentName}</td>
-            <td className="textsm">{attributes.Livingroom + attributes.Bedroom + attributes.Kitchen + attributes.Restroom}</td>
-            <td className="textsm">{attributes.Size}m<sup>2</sup></td>
+            <td className="textsm">{calcSum(attributes)}</td>
+            <td className="textsm">{attributes.Size} m²</td>
             <td className="textsm"></td>
             <td className="textsm"><span onClick={()=>handleDetail(id)}>Xem chi tiết</span></td>
             <td className="textsm"><img alt="edit4140" src="/icon/edit-icon.svg" className="edit-icon" onClick={()=>handleEdit(id)}/>
-              <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" onClick={()=>deleteItem('apartments', id)}/>
+              <img alt="trashalt4140" src="/icon/delete-icon.svg" className="trash-icon" 
+              onClick={()=>confirmDelete(id, attributes.ApartmentName, attributes.Size,calcSum(attributes))}/>
             </td>
           </tr>)}
         </table>
       </div>
     </div>
+    <Popup trigger={popup} setTrigger={setPopup} setDelete={handleDelete} id={itemID} category="tòa nhà" 
+      details={
+        [
+          {key: "Tên căn hộ", value: itemName},
+          {key: "Diện tích", value: `${itemSize} m²`},
+          {key: "Số phòng", value: itemRoom},
+        ]
+      }>
+    </Popup>
     </>
-  )
-}
-
-export default function ApartmentList ()
-{
-  return(
-    <div>
-    <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/Apartment/ApartmentForm" element={<ApartmentForm />} />
-      <Route path="/Apartment/ApartmentDetail" element={<ApartmentDetail />} />
-    </Routes>
-    </div>
   )
 }

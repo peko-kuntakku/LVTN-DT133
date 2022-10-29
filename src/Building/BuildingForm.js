@@ -28,6 +28,7 @@ function Main (){
   const [services,loadServices] = useState([]);
   const [provinces, loadProvince]= useState([]);
   const [districts, loadDistrict]= useState([]);
+  const [locationID, setLocation] = useState();
   const [wards, loadWard]= useState([]);
 
   const [locations, setLocations]= useState([]);
@@ -52,6 +53,7 @@ function Main (){
       setWard(attr.location.data.attributes.Ward)
       setNum(attr.location.data.attributes.Num)
       setStreet(attr.location.data.attributes.Street)
+      setLocation(attr.location.data.id)
       setF2(false)
       setF3(false)
     }
@@ -112,29 +114,32 @@ function Main (){
   }
 
   //Tải danh sách location để lấy location mới thêm gần nhất
-  useEffect(()=>{loadItem('locations','',setLocations)},[])
+  useEffect(()=>{loadItem('locations','',setLocations)})
   const navigate = useNavigate();
   const handleClick = (event) => {
     event.preventDefault();
+    const address = {
+      "data": {
+        "Province": Province,
+        "District": District,
+        "Ward": Ward,
+        "Num": Num,
+        "Street": Street
+      }
+    }
+    if (buildingID==0) addNewItem('locations', address)
+    else updateItem('locations', locationID, address)
+    setTimeout(AddBuilding, 1000)
+  }
+  const AddBuilding = () => 
+  {
+    const curLocation = (buildingID==0)? locations.at(-1).id : locationID
     let servicetemp = document.getElementsByName("services")
     let servicelist = Array()
     for (const i of servicetemp)
     {
       if (i.checked) servicelist.push(Number(i.value))
     }
-    const address = {
-      "data": {
-          "Province": Province,
-          "District": District,
-          "Ward": Ward,
-          "Num": Num,
-          "Street": Street
-      }
-    }
-    if (buildingID==0) addNewItem('locations', address)
-    else updateItem('locations', buildingID, address)
-    navigate('/Building/BuildingList');
-    const curLocation = (buildingID==0)? locations.at(-1).id : buildingID
     const building = {
       "data": {
         "BuildingName": BuildingName,

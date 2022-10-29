@@ -67,7 +67,7 @@ export default function ContractList (){
             <tr className="rowtitle">
               {colname.map((a)=><th className="textsm" style={{width: a.width}}>{a.title}</th>)}
             </tr>
-              {contracts.map(data => 
+              {/* {contracts.map(data => 
             <tr>
               <td className="textsm">{data.id}</td>
               <td className="textsm">{}</td>
@@ -75,7 +75,7 @@ export default function ContractList (){
               <td className="textsm">{data.attributes.Start_Date}</td>
               <td className="textsm">{}</td>
               <td className="textsm"><Link to='/BuildingDetail'>Xem chi tiết</Link></td>
-            </tr>)}
+            </tr>)} */}
           </table>
         </div>
       </div>
